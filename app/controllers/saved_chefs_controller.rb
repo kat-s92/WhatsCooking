@@ -11,6 +11,7 @@ class SavedChefsController < ApplicationController
     @saved_chef = SavedChef.new(saved_chef_params)
     @saved_chef.user = current.user
     @saved_chef.chef = Chef.find(params[:id])
+    @saved_chef.save
   end
 
   # def delete
