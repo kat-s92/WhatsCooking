@@ -1,0 +1,2 @@
+class SavedChefsController < ApplicationController
+end
