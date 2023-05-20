@@ -4,4 +4,5 @@ class User < ApplicationRecord
   has_one :shopping_cart
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :saved_recipes
 end
