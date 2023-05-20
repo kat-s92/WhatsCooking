@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :saved_chefs
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :saved_recipes
 end
