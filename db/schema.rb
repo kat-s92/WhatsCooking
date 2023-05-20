@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_20_105707) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_20_121551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_105707) do
     t.index ["chef_id"], name: "index_recipes_on_chef_id"
   end
 
+  create_table "saved_chefs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "chef_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chef_id"], name: "index_saved_chefs_on_chef_id"
+    t.index ["user_id"], name: "index_saved_chefs_on_user_id"
+  end
+
   create_table "shopping_carts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -63,7 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_105707) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "shopping_cart_id"
+    t.bigint "shopping_cart_id", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["shopping_cart_id"], name: "index_users_on_shopping_cart_id"
@@ -71,6 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_105707) do
 
   add_foreign_key "food_items", "food_categories"
   add_foreign_key "recipes", "chefs"
+  add_foreign_key "saved_chefs", "chefs"
+  add_foreign_key "saved_chefs", "users"
   add_foreign_key "shopping_carts", "users"
   add_foreign_key "users", "shopping_carts"
 end
