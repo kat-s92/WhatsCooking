@@ -3,4 +3,3 @@ class FoodItem < ApplicationRecord
   has_many :recipe_food_item
   has_many :missing_items
 end
-git
