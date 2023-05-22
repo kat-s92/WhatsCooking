@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_101631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
     t.datetime "updated_at", null: false
     t.index ["food_item_id"], name: "index_recipe_food_items_on_food_item_id"
     t.index ["recipe_id"], name: "index_recipe_food_items_on_recipe_id"
+  end
+
+  create_table "recipe_steps", force: :cascade do |t|
+    t.integer "number"
+    t.text "description"
+    t.float "duration"
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_recipe_steps_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -121,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
   add_foreign_key "missing_items", "shopping_carts"
   add_foreign_key "recipe_food_items", "food_items"
   add_foreign_key "recipe_food_items", "recipes"
+  add_foreign_key "recipe_steps", "recipes"
   add_foreign_key "recipes", "chefs"
   add_foreign_key "reviews", "recipes"
   add_foreign_key "reviews", "users"

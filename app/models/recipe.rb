@@ -3,4 +3,5 @@ class Recipe < ApplicationRecord
   has_many :saved_recipes
   has_many :recipe_food_item
   has_many :reviews
+  has_many :recipe_steps
 end
