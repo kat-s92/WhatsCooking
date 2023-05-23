@@ -14,10 +14,11 @@ class SavedChefsController < ApplicationController
     @saved_chef.save
   end
 
-  # def delete
-  #   @saved_chef = SavedChef.find(params[id])
-  #   @saved_chef.destroy
-  # end
+  def delete
+    @saved_chef = SavedChef.find(params[id])
+    @saved_chef.destroy
+    redirect_to saved_chefs_path
+  end
 
   private
 

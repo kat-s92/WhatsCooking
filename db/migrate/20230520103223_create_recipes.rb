@@ -4,7 +4,6 @@ class CreateRecipes < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :duration
       t.integer :portion_size, default: 1
-      t.references :chef, null: false, foreign_key: true
 
       t.timestamps
     end
