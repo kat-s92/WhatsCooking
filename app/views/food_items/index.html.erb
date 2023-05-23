@@ -1,5 +1,12 @@
 <h1>Find Today's Recipe</h1>
 <h3>Choose available ingredients</h3>
-<%  @food_items.each do |food_item| %>
-  <%= food_item %>
+
+
+
+<%= simple_form_for :food_item do |f| %>
+<%= f.input :category,
+include_hidden: false,
+            as: :check_boxes,
+            input_html: {multiple:true},
+            collection: @food_items %>
 <% end %>
