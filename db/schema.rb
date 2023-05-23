@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "chefs", force: :cascade do |t|
     t.string "first_name"
-    t.string "string"
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,13 +53,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
     t.index ["recipe_id"], name: "index_recipe_food_items_on_recipe_id"
   end
 
+  create_table "recipe_steps", force: :cascade do |t|
+    t.integer "number"
+    t.text "description"
+    t.float "duration"
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_recipe_steps_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.integer "duration"
     t.integer "portion_size", default: 1
-    t.bigint "chef_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "chef_id"
+    t.text "ingredients", default: [], array: true
     t.index ["chef_id"], name: "index_recipes_on_chef_id"
   end
 
@@ -77,9 +87,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
 
   create_table "saved_chefs", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "chef_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "chef_id"
     t.index ["chef_id"], name: "index_saved_chefs_on_chef_id"
     t.index ["user_id"], name: "index_saved_chefs_on_user_id"
   end
@@ -110,7 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "shopping_cart_id", default: 0
+    t.bigint "shopping_cart_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["shopping_cart_id"], name: "index_users_on_shopping_cart_id"
@@ -121,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_131219) do
   add_foreign_key "missing_items", "shopping_carts"
   add_foreign_key "recipe_food_items", "food_items"
   add_foreign_key "recipe_food_items", "recipes"
+  add_foreign_key "recipe_steps", "recipes"
   add_foreign_key "recipes", "chefs"
   add_foreign_key "reviews", "recipes"
   add_foreign_key "reviews", "users"
