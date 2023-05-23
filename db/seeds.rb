@@ -46,6 +46,10 @@ corn = FoodItem.create(name: "Corn", food_category_id: vegetables.id)
 raddish = FoodItem.create(name: "Raddish", food_category_id: vegetables.id)
 celery = FoodItem.create(name: "Celery", food_category_id: vegetables.id)
 leek = FoodItem.create(name: "Leek", food_category_id: vegetables.id)
+capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id)
+olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id)
+parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id)
+corriander = FoodItem.create(name: "Corriander", food_category_id: vegetables.id)
 
 # CARBS:
 rice = FoodItem.create(name: "Rice", food_category_id: carbs.id)
@@ -93,9 +97,9 @@ milk = FoodItem.create(name: "Milk", food_category_id: dairyandcheese.id)
 yogurt = FoodItem.create(name: "Yogurt", food_category_id: dairyandcheese.id)
 cream_cheese = FoodItem.create(name: "Cream Cheese", food_category_id: dairyandcheese.id)
 cheddar = FoodItem.create(name: "Cheddar", food_category_id: dairyandcheese.id)
-butter = FoodItem.create(name: "Butter", food_category_id: dairy.id)
+butter = FoodItem.create(name: "Butter", food_category_id: dairyandcheese.id)
 cottage_cheese = FoodItem.create(name: "Cottage Cheese", food_category_id: dairyandcheese.id)
-sour_cream = FoodItem.create(name: "Sour Cream", food_category_id: dairy.id)
+sour_cream = FoodItem.create(name: "Sour Cream", food_category_id: dairyandcheese.id)
 mozzarella = FoodItem.create(name: "Mozzarella", food_category_id: dairyandcheese.id)
 parmesan = FoodItem.create(name: "Parmesan", food_category_id: dairyandcheese.id)
 halloumi = FoodItem.create(name: "Halloumi", food_category_id: dairyandcheese.id)
@@ -116,11 +120,98 @@ blue_cheese = FoodItem.create(name: "Blue Cheese", food_category_id: dairyandche
 camembert = FoodItem.create(name: "Camembert", food_category_id: dairyandcheese.id)
 gruyere = FoodItem.create(name: "Gruyère", food_category_id: dairyandcheese.id)
 emmental = FoodItem.create(name: "Emmental", food_category_id: dairyandcheese.id)
-edam = FoodItem.create(name: "Edam", food_category_id: cheese.id)
+edam = FoodItem.create(name: "Edam", food_category_id: dairyandcheese.id)
 muenster = FoodItem.create(name: "Muenster", food_category_id: dairyandcheese.id)
 
+# CHEFS:
+10.times do
+  chef = Chef.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
+  )
+end
 
+# RECIPE NO.1:
+# recipeone = Recipe.new do |r|
+#   r.ingredients = ['3 Aubergines', '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice']
+#   r.name = "Smokey aubergine pasta"
+#   r.duration = 45
+#   r.chef_id = Chef.pluck(:id)
+#   # OR Chefs.sample
+# end
+# recipeone.save
 
+recipeone = Recipe.create(
+  name: "Smokey aubergine pasta",
+  duration: 45,
+  ingredients: ['3 Aubergines'],
+  # , '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice'
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+  # OR Chefs.sample
+# COOKING STEPS FOR RECIPE1 ^^
+# STEP1
+# recipeonestepone = RecipeStep.new do |s|
+#   s.number = 1
+#   s.description = 'Preheat the oven to 220°C fan. Chop up one of your aubergines into cubes and roast for 30 minutes,
+#   stirring halfway through, until deeply browned and softened.'
+#   s.duration = 30
+#   s.recipe_id = recipeone.id
+# end
+# recipeonestepone.save
 
+recipeonestepone = RecipeStep.create(
+  number: 1,
+  description: 'Preheat the oven to 220°C fan. Chop up one of your aubergines into cubes and roast for 30 minutes,
+  stirring halfway through, until deeply browned and softened.',
+  duration: 30,
+  recipe_id: recipeone.id
+)
 
-puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items"
+# STEP2
+recipeonesteptwo = RecipeStep.new do |s|
+  s.number = 2
+  s.description = 'Grill the rest of your veg on a hot, smoking griddle pan. Firstly, prick the whole aubergines
+   with a fork, put them on the pan and cook til charred all over. Set aside to cool slightly. Once cooled, peel the aubergines.
+   Toss the onion and tomatoes together in a bowl with a tablespoon of oil and grill in the same pan for 10 minutes.
+   Combine all veg together.'
+  s.duration = 30
+  s.recipe_id = recipeone.id
+end
+recipeonesteptwo.save
+
+# STEP3
+recipeonestepthree = RecipeStep.new do |s|
+  s.number = 3
+  s.description = 'Put the tomato paste, paprika, three-quarters of the garlic and 4 tablespoons of oil into a small
+  saucepan on a medium heat and cook, stirring occasionally, until the garlic is fragrant and the tomato paste has
+  turned dark red, about 5 minutes. Add to the vegentable mixture along with salt and pepper to taste and blitz in food
+  processor, if you have one. This is your sauce base.'
+  s.duration = 7
+  s.recipe_id = recipeone.id
+end
+recipeonestepthree.save
+
+# STEP4:
+recipeonestepfour = RecipeStep.new do |s|
+  s.number = 4
+  s.description = 'Cook the pasta in plenty of salted boiling water for 8 minutes, or until al dente. Reserve 275ml
+  of the pasta water, then drain the pasta well.'
+  s.duration = 8
+  s.recipe_id = recipeone.id
+end
+recipeonestepfour.save
+
+# STEP5:
+recipeonestepfive = RecipeStep.new do |s|
+  s.number = 5
+  s.description = 'Add the reserved pasta water and half the roasted aubergine to the sauce base and heat
+  through on a medium-high heat. Add the drained pasta and stir to warm through, about 2 minutes.
+  Add lemon juice to taste. Enjoy your meal!'
+  s.duration = 2
+  s.recipe_id = recipeone.id
+end
+recipeonestepfive.save
+
+puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes"
