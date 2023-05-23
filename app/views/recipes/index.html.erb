@@ -1,1 +1,4 @@
 <h1>Recipes will go here</h1>
+<% @recipes.each do |recipe| %>
+<%= render 'recipe_card', recipe:recipe %>
+<% end %>
