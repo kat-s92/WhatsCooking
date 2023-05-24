@@ -1,0 +1,11 @@
+<div class="recipe-card">
+<h1><%= recipe.name %></h1>
+<p><%= recipe.chef.first_name %>
+  <%=recipe.chef.last_name  %>
+  <%= recipe.reviews.first.rating %>
+  <% recipe.ingredients.each do |ing| %>
+  <%= ing %>
+  <% end %>
+  <%  %>
+</p>
+</div>
