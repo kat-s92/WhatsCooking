@@ -1,15 +1,13 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all    # Will need to do this way once we have more recipes with reviews
     # @ratings = []
-
     # @recipes.each do |recipe|
     #   reviews = recipe.reviews
     #   reviews.each do |review|
     #   @ratings << review.rating
     #   end
     # end
-
   end
 
   def show
