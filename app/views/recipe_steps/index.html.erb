@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>Cooking Steps</h3>
+    <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="false">
+        <% @recipe_steps.each_with_index do |step, i| %>
+         <swiper-slide>
+          <p>Step <%= i+=1 %></p>
+          <p>Duration: <%= step.duration %></p>
+          <p><%= step.description %></p>
+          <% if i == @recipe_steps.count %>
+          <%# Instead of link_to, we need render the review here instead of button, we don't it %>
+                    <%= link_to 'Review Recipe', new_recipe_review_path(params[:recipe_id]) %>
+          <% end %>
+        </swiper-slide>
+    <% end %>
+    </swiper-container>
+
+</div>

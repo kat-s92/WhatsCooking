@@ -144,8 +144,7 @@ end
 recipeone = Recipe.create(
   name: "Smokey aubergine pasta",
   duration: 45,
-  ingredients: ['3 Aubergines'],
-  # , '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice'
+  ingredients: ['3 Aubergines', '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice'],
   chef_id: rand(1..10),
   portion_size: 1
 )
