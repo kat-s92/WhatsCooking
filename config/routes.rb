@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :recipes, only: %i[index show] do
     resources :reviews, only: %i[index show create new]
   end
-
-  resources :shopping_carts, only: %i[show]
+  get "recipes/:id/missing_items", to: "recipes#missing_items", as: "missing_items"
+  resources :shopping_carts, only: %i[index show]
   resources :saved_chefs, only: %i[index create new destroy]
   resources :saved_recipes, only: %i[index create new destroy]
 end
