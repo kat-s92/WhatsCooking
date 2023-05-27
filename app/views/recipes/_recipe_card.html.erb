@@ -1,0 +1,7 @@
+<div class="recipe-card">
+  <%= recipe.name %>
+<p><%= recipe.chef.first_name %>
+  <%=recipe.chef.last_name  %></p>
+  <p><%= recipe.reviews.first.rating %></p>
+  <%= link_to "See Recipe", recipe_path(recipe.id) %>
+</div>
