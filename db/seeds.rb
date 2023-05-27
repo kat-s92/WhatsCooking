@@ -213,4 +213,16 @@ recipeonestepfive = RecipeStep.new do |s|
 end
 recipeonestepfive.save
 
-puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes"
+rewe = Shop.create(
+  name: "Rewe",
+  address: "Friedrichstraße 60, 10117, Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+# user = User.create(
+#   first_name: "Sam",
+#   last_name: "Rogers",
+#   email: "user@gmail.com",
+#   passowrd: "123456"
+# )
+puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count}"

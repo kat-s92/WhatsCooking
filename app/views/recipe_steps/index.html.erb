@@ -9,10 +9,9 @@
           <% if i == @recipe_steps.count %>
           <%# Instead of link_to, we need render the review here instead of button, we don't it
           <% render "review", review:review %>
-           <%= link_to 'Review Recipe', new_recipe_review_path(params[:recipe_id])
+           <%= link_to 'Review Recipe', new_recipe_review_path(params[:recipe_id]) %>
           <% end %>
         </swiper-slide>
     <% end %>
     </swiper-container>
-
 </div>
