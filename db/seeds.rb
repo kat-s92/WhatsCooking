@@ -159,6 +159,13 @@ recipetwo = Recipe.create(
   portion_size: 1
 )
 
+recipethree = Recipe.create(
+  name: "Tomato & Basil Soup",
+  duration: 10,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
 RecipeFoodItem.create(food_item_id: aubergine.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: onion.id, recipe_id: recipeone.id)
@@ -169,6 +176,10 @@ RecipeFoodItem.create(food_item_id: pasta.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: avocado.id, recipe_id: recipetwo.id)
 RecipeFoodItem.create(food_item_id: goat_cheese.id, recipe_id: recipetwo.id)
 RecipeFoodItem.create(food_item_id: bread.id, recipe_id: recipetwo.id)
+
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipethree.id)
+RecipeFoodItem.create(food_item_id: basil.id, recipe_id: recipethree.id)
+RecipeFoodItem.create(food_item_id: cayenne.id, recipe_id: recipethree.id)
 
 puts "Creating Recipe food items 🥑"
 
