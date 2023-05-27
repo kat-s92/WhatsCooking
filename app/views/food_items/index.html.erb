@@ -2,12 +2,12 @@
 <h3>Choose available ingredients</h3>
 
 <%= simple_form_for :food_item, url:  recipes_path, method: :get do |f| %>
-<%= f.input :food_item,
+<%= f.input :your_selection,
             as: :check_boxes,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
-            input_html: {multiple:true},
+            input_html: {multiple:true, class: 'category-selector'},
             collection: @food_items %>
 <%= f.submit "Done", class: "btn btn-primary", style:"color:white"%>
 <% end %>
