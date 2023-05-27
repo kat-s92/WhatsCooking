@@ -7,7 +7,9 @@
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
-            input_html: {multiple:true},
-            collection: @food_items %>
+            input_html: {multiple:true}
+            #collection:   { style: "background-image: url(#{cl_image_path(:food_image)})" }
+            %>
+
 <%= f.submit "Done", class: "btn btn-primary", style:"color:white"%>
 <% end %>
