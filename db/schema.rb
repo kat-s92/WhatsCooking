@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_27_091915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,11 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
 
   create_table "missing_items", force: :cascade do |t|
     t.bigint "food_item_id", null: false
-    t.bigint "shopping_cart_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_item_id"], name: "index_missing_items_on_food_item_id"
-    t.index ["shopping_cart_id"], name: "index_missing_items_on_shopping_cart_id"
   end
 
   create_table "recipe_food_items", force: :cascade do |t|
@@ -71,7 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
     t.datetime "updated_at", null: false
     t.bigint "chef_id"
     t.text "ingredients", default: [], array: true
+    t.bigint "shopping_cart_id"
     t.index ["chef_id"], name: "index_recipes_on_chef_id"
+    t.index ["shopping_cart_id"], name: "index_recipes_on_shopping_cart_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -107,6 +107,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "missing_item_id"
+    t.index ["missing_item_id"], name: "index_shopping_carts_on_missing_item_id"
     t.index ["user_id"], name: "index_shopping_carts_on_user_id"
   end
 
@@ -128,17 +130,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_151013) do
 
   add_foreign_key "food_items", "food_categories"
   add_foreign_key "missing_items", "food_items"
-  add_foreign_key "missing_items", "shopping_carts"
   add_foreign_key "recipe_food_items", "food_items"
   add_foreign_key "recipe_food_items", "recipes"
   add_foreign_key "recipe_steps", "recipes"
   add_foreign_key "recipes", "chefs"
+  add_foreign_key "recipes", "shopping_carts"
   add_foreign_key "reviews", "recipes"
   add_foreign_key "reviews", "users"
   add_foreign_key "saved_chefs", "chefs"
   add_foreign_key "saved_chefs", "users"
   add_foreign_key "saved_recipes", "recipes"
   add_foreign_key "saved_recipes", "users"
+  add_foreign_key "shopping_carts", "missing_items"
   add_foreign_key "shopping_carts", "users"
   add_foreign_key "users", "shopping_carts"
 end

@@ -49,7 +49,7 @@ leek = FoodItem.create(name: "Leek", food_category_id: vegetables.id)
 capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id)
 olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id)
 parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id)
-corriander = FoodItem.create(name: "Corriander", food_category_id: vegetables.id)
+coriander = FoodItem.create(name: "Coriander", food_category_id: vegetables.id)
 
 # CARBS:
 rice = FoodItem.create(name: "Rice", food_category_id: carbs.id)
