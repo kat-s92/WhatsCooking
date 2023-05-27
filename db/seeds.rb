@@ -133,6 +133,9 @@ puts "Creating Chefs 🥑"
   )
 end
 
+# url = [https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg]
+
+
 # RECIPE NO.1:
 # recipeone = Recipe.new do |r|
 #   r.ingredients = ['3 Aubergines', '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice']
