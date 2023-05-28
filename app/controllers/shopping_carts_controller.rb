@@ -12,7 +12,10 @@ class ShoppingCartsController < ApplicationController
     @markers = @shops.geocoded.map do |shop|
       {
         lat: shop.latitude,
-        lon: shop.longitude
+        lon: shop.longitude,
+        shop_info: render_to_string(partial:
+                    "shops/popup", locals: { shop: }),
+        marker_img: helpers.asset_url("cart.png")
       }
     end
   end

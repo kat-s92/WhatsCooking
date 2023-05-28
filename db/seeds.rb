@@ -219,10 +219,24 @@ rewe = Shop.create(
   opening_hours: "7:00am - 11:30pm"
 )
 
-# user = User.create(
-#   first_name: "Sam",
-#   last_name: "Rogers",
-#   email: "user@gmail.com",
-#   passowrd: "123456"
-# )
-puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count}"
+edeka = Shop.create(
+  name: "Edeka",
+  address: "Friedrichstraße 67-70, 10117 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+biomarkt = Shop.create(
+  name: "BioMarkt",
+  address: "Rudi-Dutschke-Straße 17, 10969 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+
+
+user = User.create(
+  first_name: "Sam",
+  last_name: "Rogers",
+  email: "user@gmail.com",
+  password: "123456"
+)
+puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count} shops, #{User.count}"
