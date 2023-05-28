@@ -123,6 +123,8 @@ emmental = FoodItem.create(name: "Emmental", food_category_id: dairyandcheese.id
 edam = FoodItem.create(name: "Edam", food_category_id: dairyandcheese.id)
 muenster = FoodItem.create(name: "Muenster", food_category_id: dairyandcheese.id)
 
+puts "Creating Chefs 🥑"
+
 # CHEFS:
 10.times do
   chef = Chef.create(
@@ -130,6 +132,9 @@ muenster = FoodItem.create(name: "Muenster", food_category_id: dairyandcheese.id
     last_name: Faker::Name.last_name
   )
 end
+
+# url = [https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg]
+
 
 # RECIPE NO.1:
 # recipeone = Recipe.new do |r|
@@ -141,13 +146,46 @@ end
 # end
 # recipeone.save
 
+puts "Creating recipe 🥑"
+
 recipeone = Recipe.create(
   name: "Smokey aubergine pasta",
   duration: 45,
-  ingredients: ['3 Aubergines', '100g Tomato', '3tbp Tomato Paste', '1 Onion', '1tsp Paprika', '6 Garlic Cloves', '180g Pasta', 'Lemon Juice'],
   chef_id: rand(1..10),
   portion_size: 1
 )
+
+recipetwo = Recipe.create(
+  name: "Avocado Toast",
+  duration: 25,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
+recipethree = Recipe.create(
+  name: "Tomato & Basil Soup",
+  duration: 10,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
+RecipeFoodItem.create(food_item_id: aubergine.id, recipe_id: recipeone.id)
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipeone.id)
+RecipeFoodItem.create(food_item_id: onion.id, recipe_id: recipeone.id)
+RecipeFoodItem.create(food_item_id: paprika.id, recipe_id: recipeone.id)
+RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipeone.id)
+RecipeFoodItem.create(food_item_id: pasta.id, recipe_id: recipeone.id)
+
+RecipeFoodItem.create(food_item_id: avocado.id, recipe_id: recipetwo.id)
+RecipeFoodItem.create(food_item_id: goat_cheese.id, recipe_id: recipetwo.id)
+RecipeFoodItem.create(food_item_id: bread.id, recipe_id: recipetwo.id)
+
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipethree.id)
+RecipeFoodItem.create(food_item_id: basil.id, recipe_id: recipethree.id)
+RecipeFoodItem.create(food_item_id: cayenne.id, recipe_id: recipethree.id)
+
+puts "Creating Recipe food items 🥑"
+
   # OR Chefs.sample
 # COOKING STEPS FOR RECIPE1 ^^
 # STEP1
@@ -159,6 +197,8 @@ recipeone = Recipe.create(
 #   s.recipe_id = recipeone.id
 # end
 # recipeonestepone.save
+
+puts "Creating recipe steps 🥑"
 
 recipeonestepone = RecipeStep.create(
   number: 1,
@@ -240,3 +280,4 @@ user = User.create(
   password: "123456"
 )
 puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count} shops, #{User.count}"
+puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{RecipeFoodItem.count} food recipe items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes"

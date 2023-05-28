@@ -2,10 +2,14 @@
  <p>Recipe Name: <%= recipe.name %></p>
 <p>Chef: <%= recipe.chef.first_name %>
   <%=recipe.chef.last_name  %></p>
+<<<<<<< HEAD
   <% if recipe.reviews == true %>
   <p><%= recipe.reviews.first.rating %></p>
   <% else %>
  <p><%= "No reviews yet" %></p>
   <% end %>
+=======
+
+>>>>>>> a085403ebc1a7b03d5b3097032da68cc17dbc8c8
   <%= link_to "See Recipe", recipe_path(recipe.id) %>
 </div>

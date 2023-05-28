@@ -1,6 +1,12 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all    # Will need to do this way once we have more recipes with reviews
+    selected_products = params[:food_item][:your_selection].drop(1)
+    recipe_food_items = RecipeFoodItem.group(:recipe_id).where(food_item_id: selected_products).count
+    recipes_with_selected_products = recipe_food_items.select { |_recipe_id, count| count > 1 }
+    recipes_with_selected_products = recipes_with_selected_products.keys
+    @recipes = Recipe.find(recipes_with_selected_products)
+
+    # Will need to do this way once we have more recipes with reviews
     # @ratings = []
     # @recipes.each do |recipe|
     #   reviews = recipe.reviews
@@ -8,6 +14,7 @@ class RecipesController < ApplicationController
     #   @ratings << review.rating
     #   end
     # end
+
   end
 
   def show
