@@ -271,8 +271,6 @@ biomarkt = Shop.create(
   opening_hours: "7:00am - 11:30pm"
 )
 
-
-
 user = User.create(
   first_name: "Sam",
   last_name: "Rogers",
