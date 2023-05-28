@@ -7,12 +7,7 @@
           <p>Duration: <%= step.duration %></p>
           <p><%= step.description %></p>
           <% if i == @recipe_steps.count %>
-<<<<<<< HEAD
-          <%# Instead of link_to, we need render the review here instead of button, we don't it
-          <% render "review", review:review %>
-=======
           <%= render "reviews/review", review:@review, recipe:@recipe %>
->>>>>>> a085403ebc1a7b03d5b3097032da68cc17dbc8c8
            <%= link_to 'Review Recipe', new_recipe_review_path(params[:recipe_id]) %>
           <% end %>
         </swiper-slide>

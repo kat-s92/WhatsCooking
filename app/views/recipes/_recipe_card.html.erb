@@ -1,5 +1,10 @@
 <div class="recipe-card">
- <p>Recipe Name: <%= recipe.name %></p>
+<div class="card-image">
+<%= cl_image_tag("bruna-branco-t8hTmte4O_g-unsplash_wrrwuh.jpg") %>
+</div>
+
+<div class="card-contents">
+ <h3><%= recipe.name %></h3>
 <p>Chef: <%= recipe.chef.first_name %>
   <%=recipe.chef.last_name  %></p>
   <% if recipe.reviews == true %>
@@ -7,5 +12,7 @@
   <% else %>
  <p><%= "No reviews yet" %></p>
   <% end %>
+  <p class="duration"><%= recipe.duration%> min</p>
   <%= link_to "See Recipe", recipe_path(recipe.id) %>
+  </div>
 </div>

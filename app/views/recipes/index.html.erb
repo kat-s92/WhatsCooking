@@ -1,4 +1,7 @@
-<h3>Choose your recipe</h3>
+<div class="recipe-page">
+<h1>Choose your recipe</h1>
+<h2> We have found  <%= @recipes.count%> recipes</h2>
 <% @recipes.each do |recipe| %>
 <%= render 'recipe_card', recipe:recipe %>
 <% end %>
+</div>

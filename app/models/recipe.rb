@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   has_many :recipe_food_item
   has_many :reviews
   has_many :recipe_steps
+  has_one_attached :photo
 end
