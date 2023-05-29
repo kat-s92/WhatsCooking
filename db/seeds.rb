@@ -22,36 +22,6 @@ legumes = FoodCategory.create(name: "Legumes")
 
 puts "Creating Food Items 🥑"
 # VEG:
-<<<<<<< HEAD
-onion = FoodItem.create(name: "Onion", food_category_id: vegetables.id)
-potato = FoodItem.create(name: "Potato", food_category_id: vegetables.id)
-tomato = FoodItem.create(name: "Tomato", food_category_id: vegetables.id)
-cucumber = FoodItem.create(name: "Cucumber", food_category_id: vegetables.id)
-beetroot = FoodItem.create(name: "Beetroot", food_category_id: vegetables.id)
-cauliflower = FoodItem.create(name: "Cauliflower", food_category_id: vegetables.id)
-aubergine = FoodItem.create(name: "Aubergine", food_category_id: vegetables.id)
-avocado = FoodItem.create(name: "Avocado", food_category_id: vegetables.id)
-pepper = FoodItem.create(name: "Pepper", food_category_id: vegetables.id)
-cabbage = FoodItem.create(name: "Cabbage", food_category_id: vegetables.id)
-pumpkin = FoodItem.create(name: "Pumpkin", food_category_id: vegetables.id)
-carrot = FoodItem.create(name: "Carrot", food_category_id: vegetables.id)
-broccoli = FoodItem.create(name: "Broccoli", food_category_id: vegetables.id)
-kale = FoodItem.create(name: "Kale", food_category_id: vegetables.id)
-asparagus = FoodItem.create(name: "Asparagus", food_category_id: vegetables.id)
-spinach = FoodItem.create(name: "Spinach", food_category_id: vegetables.id)
-mushroom = FoodItem.create(name: "Mushroom", food_category_id: vegetables.id)
-garlic = FoodItem.create(name: "Garlic", food_category_id: vegetables.id)
-squash = FoodItem.create(name: "Squash", food_category_id: vegetables.id)
-zucchini = FoodItem.create(name: "Zucchini", food_category_id: vegetables.id)
-corn = FoodItem.create(name: "Corn", food_category_id: vegetables.id)
-raddish = FoodItem.create(name: "Raddish", food_category_id: vegetables.id)
-celery = FoodItem.create(name: "Celery", food_category_id: vegetables.id)
-leek = FoodItem.create(name: "Leek", food_category_id: vegetables.id)
-capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id)
-olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id)
-parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id)
-coriander = FoodItem.create(name: "Coriander", food_category_id: vegetables.id)
-=======
 onion = FoodItem.create(name: "Onion", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/onion.jpg"), filename: "onion.jpg", content_type: "image/jpg" } )
 potato = FoodItem.create(name: "Potato", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/potato.jpg"), filename: "potato.jpg", content_type: "image/jpg" } )
 tomato = FoodItem.create(name: "Tomato", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/tomato.jpg"), filename: "tomato.jpg", content_type: "image/jpg" } )
@@ -80,7 +50,6 @@ capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id, food_i
 olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/olives.jpg"), filename: "olives.jpg", content_type: "image/jpg" } )
 parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/parsley.jpg"), filename: "parsley.jpg", content_type: "image/jpg" } )
 coriander = FoodItem.create(name: "Coriander", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/coriander.jpg"), filename: "coriander.jpg", content_type: "image/jpg" } )
->>>>>>> db853bef5eb3753f2668e3bd001c61d8fe0bbaac
 
 # CARBS:
 rice = FoodItem.create(name: "Rice", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/rice.jpg"), filename: "rice.jpg", content_type: "image/jpg" })
