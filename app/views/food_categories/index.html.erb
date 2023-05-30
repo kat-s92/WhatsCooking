@@ -1,5 +1,7 @@
-<h1>Find Today's Recipe</h1>
-<h3>Choose available ingredients</h3>
-<%  @food_categories.each do |food_category| %>
-<%= link_to food_category.name, food_category_food_items_path(food_category) %>
-<% end %>
+
+  <h1>Find Today's Recipe</h1>
+  <h3>Choose available ingredients</h3>
+  <%  @food_categories.each do |food_category| %>
+  <%= link_to food_category.name, food_category_food_items_path(food_category) %>
+  <% end %>
+

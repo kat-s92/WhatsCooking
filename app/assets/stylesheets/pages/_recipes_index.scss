@@ -6,7 +6,7 @@ padding: 0px 24px;
 
 h1{
   font-size:$main-header;
-  color: $primary-color;
+  color: $text-color;
 }
 
 .recipe-card {
@@ -31,7 +31,7 @@ h2 {
 
 h3 {
   font-size:$card-header;
-  color: $primary-color;
+  color: $text-color;
   font-weight: bolder;
 margin-bottom:0;
 }
