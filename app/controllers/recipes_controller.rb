@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    raise
+    # raise
     selected_products = params[:food_item][:your_selection].drop(1)
     recipe_food_items = RecipeFoodItem.group(:recipe_id).where(food_item_id: selected_products).count
     # raise
-    recipes_with_selected_products = recipe_food_items.select { |_recipe_id, count| count > 1 }
+    recipes_with_selected_products = recipe_food_items.select { |_recipe_id, count| count > 0 }
     recipes_with_selected_products = recipes_with_selected_products.keys
     @recipes = Recipe.find(recipes_with_selected_products)
 
