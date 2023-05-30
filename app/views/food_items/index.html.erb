@@ -4,7 +4,7 @@
 <%= simple_form_for :food_item, url:  recipes_path, method: :get do |f| %>
 <% food_array = @food_items.map do |food| food.name end %>
 
-<%= f.input :food_item,
+<%= f.input :your_selection,
             as: :check_boxes,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
