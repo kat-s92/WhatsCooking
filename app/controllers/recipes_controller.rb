@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   def index
+    raise
     selected_products = params[:food_item][:your_selection].drop(1)
     recipe_food_items = RecipeFoodItem.group(:recipe_id).where(food_item_id: selected_products).count
     # raise
