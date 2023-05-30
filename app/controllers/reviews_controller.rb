@@ -11,15 +11,19 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.recipe_id = Review.find(params[:recipe_id])
+    @review.recipe = Recipe.find(params[:recipe_id])
     @review.user_id = current_user.id
-    @review.save
-    redirect_to reviews_path
+    @recipe = @review.recipe
+    if @review.save
+      redirect_to recipe_reviews_path(params["recipe_id"].to_i)
+    else
+      render :new, status: :bad_request
+    end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comment, :user_id, :recipe_id)
   end
 end
