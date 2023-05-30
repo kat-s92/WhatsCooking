@@ -1,5 +1,5 @@
 <h1>Recipe</h1>
-<% @recipe.ingredients.each do |ing| %>
- <p><%= ing %></p>
+<% @recipe.recipe_food_item.each do |ing| %>
+ <p><%= ing.food_item.name %></p>
   <% end %>
 <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id)%>
