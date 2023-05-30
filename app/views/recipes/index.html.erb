@@ -1,4 +1,25 @@
-<h3>Choose your recipe</h3>
-<% @recipes.each do |recipe| %>
-<%= render 'recipe_card', recipe:recipe %>
-<% end %>
+<div class="recipe-page">
+<h1>Choose your recipe</h1>
+<h2> We have found  <%= @recipes.count%> recipes</h2>
+
+  <% @recipes.each do |recipe| %>
+  <div class="recipe-card">
+      <div class="recipe-card-img">
+      <%= cl_image_tag("bruna-branco-t8hTmte4O_g-unsplash_wrrwuh.jpg") %>
+      </div>
+
+    <div class="card-contents">
+      <h3><%= recipe.name %></h3>
+      <p class="chef-name">Chef: <%= recipe.chef.first_name %>
+      <%=recipe.chef.last_name  %></p>
+      <% if recipe.reviews == true %>
+      <p><%= recipe.reviews.first.rating %></p>
+      <% else %>
+      <p><%= "No reviews yet" %></p>
+      <% end %>
+      <p class="duration"><%= recipe.duration%> min</p>
+    </div>
+           <%= link_to '', recipe_path(recipe), class:'recipe-card-link' %>
+  </div>
+  <% end %>
+</div>

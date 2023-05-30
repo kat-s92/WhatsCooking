@@ -139,6 +139,29 @@ recipethree = Recipe.create(
   portion_size: 1
 )
 
+recipefour = Recipe.create(
+  name: "Spaghetti with Tomato sauce",
+  duration: 30,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
+recipefive = Recipe.create(
+  name: "Andalusian gazpacho",
+  duration: 35,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
+recipesix = Recipe.create(
+  name: "Bruschetta with Tomatoes and garlic",
+  duration: 25,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
+
+# RECIPE 1
 RecipeFoodItem.create(food_item_id: aubergine.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: onion.id, recipe_id: recipeone.id)
@@ -146,15 +169,35 @@ RecipeFoodItem.create(food_item_id: paprika.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipeone.id)
 RecipeFoodItem.create(food_item_id: pasta.id, recipe_id: recipeone.id)
 
+# RECIPE 2
 RecipeFoodItem.create(food_item_id: avocado.id, recipe_id: recipetwo.id)
 # RecipeFoodItem.create(food_item_id: goat_cheese.id, recipe_id: recipetwo.id)
 RecipeFoodItem.create(food_item_id: bread.id, recipe_id: recipetwo.id)
 
+# RECIPE 3
 RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipethree.id)
 RecipeFoodItem.create(food_item_id: basil.id, recipe_id: recipethree.id)
 RecipeFoodItem.create(food_item_id: cayenne.id, recipe_id: recipethree.id)
 
 puts "Creating Recipe food items 🥑"
+
+# RECIPE 4
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipefour.id)
+RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipefour.id)
+RecipeFoodItem.create(food_item_id: pasta.id, recipe_id: recipefour.id)
+
+# RECIPE 5
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipefive.id)
+RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipefive.id)
+RecipeFoodItem.create(food_item_id: onion.id, recipe_id: recipefive.id)
+RecipeFoodItem.create(food_item_id: cumin.id, recipe_id: recipefive.id)
+
+
+# RECIPE 6
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipesix.id)
+RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipesix.id)
+RecipeFoodItem.create(food_item_id: bread.id, recipe_id: recipesix.id)
+
 
   # OR Chefs.sample
 # COOKING STEPS FOR RECIPE1 ^^
@@ -223,4 +266,29 @@ recipeonestepfive = RecipeStep.new do |s|
 end
 recipeonestepfive.save
 
+rewe = Shop.create(
+  name: "Rewe",
+  address: "Friedrichstraße 60, 10117, Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+edeka = Shop.create(
+  name: "Edeka",
+  address: "Friedrichstraße 67-70, 10117 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+biomarkt = Shop.create(
+  name: "BioMarkt",
+  address: "Rudi-Dutschke-Straße 17, 10969 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+user = User.create(
+  first_name: "Sam",
+  last_name: "Rogers",
+  email: "user@gmail.com",
+  password: "123456"
+)
+puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count} shops, #{User.count}"
 puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{RecipeFoodItem.count} food recipe items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes"
