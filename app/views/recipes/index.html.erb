@@ -5,7 +5,19 @@
   <% @recipes.each do |recipe| %>
   <div class="recipe-card">
       <div class="recipe-card-img">
-      <%= cl_image_tag("bruna-branco-t8hTmte4O_g-unsplash_wrrwuh.jpg") %>
+      <% if recipe.id == 1 %>
+      <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
+      <% elsif recipe.id == 2 %>
+      <%= image_tag("recipe_imgs/recipe2cover.jpg")%>
+      <% elsif recipe.id == 3 %>
+      <%= image_tag("recipe_imgs/recipe3cover.jpg")%>
+      <% elsif recipe.id == 4 %>
+      <%= image_tag("recipe_imgs/recipe4cover.jpg")%>
+        <% elsif recipe.id == 5 %>
+      <%= image_tag("recipe_imgs/recipe5cover.jpg")%>
+      <% elsif recipe.id == 6 %>
+      <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
+      <% end %>
       </div>
 
     <div class="card-contents">
@@ -18,6 +30,7 @@
       <p><%= "No reviews yet" %></p>
       <% end %>
       <p class="duration"><%= recipe.duration%> min</p>
+       <p class="duration"><%= recipe.portion_size%></p>
     </div>
            <%= link_to '', recipe_path(recipe), class:'recipe-card-link' %>
   </div>
