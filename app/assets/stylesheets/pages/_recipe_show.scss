@@ -1,0 +1,28 @@
+.recipe-container {
+  padding: 0px 24px;
+  // border: 1px solid black;
+
+  img {
+    height: 192px;
+    object-fit: cover;
+    width:100%;
+    margin-top: 8px;
+    }
+}
+
+.recipe-ing {
+  display: grid;
+  grid-template-columns: 2;
+
+
+  p{
+  color: $text-color;
+  }
+}
+
+.recipe-info{
+  display: flex;
+  gap:8px;
+  justify-content: center;
+  margin-bottom: 16px;;
+}

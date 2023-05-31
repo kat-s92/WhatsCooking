@@ -1,5 +1,44 @@
-<h1>Recipe</h1>
-<% @recipe.recipe_food_item.each do |ing| %>
- <p><%= ing.food_item.name %></p>
-  <% end %>
-<%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id)%>
+<div class="recipe-container">
+  <h1>Your Chosen Recipe</h1>
+  <h2> <%= @recipe.name %>
+  </h2>
+  <div class="recipe-img">
+      <% if @recipe.id == 1 %>
+      <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
+      <% elsif @recipe.id == 2 %>
+      <%= image_tag("recipe_imgs/recipe2cover.jpg")%>
+      <% elsif @recipe.id == 3 %>
+      <%= image_tag("recipe_imgs/recipe3cover.jpg")%>
+      <% elsif @recipe.id == 4 %>
+      <%= image_tag("recipe_imgs/recipe4cover.jpg")%>
+        <% elsif @recipe.id == 5 %>
+      <%= image_tag("recipe_imgs/recipe5cover.jpg")%>
+      <% elsif @recipe.id == 6 %>
+      <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
+      <% end %>
+      </div>
+
+<div class="recipe-info">
+  <p class="pill-box"><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= @recipe.duration%> min</p>
+        <p class="pill-box">
+          <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
+        <% if @recipe.portion_size > 1 %>
+        <%= @recipe.portion_size%> portions
+              <% else %>
+                      <%= @recipe.portion_size%> portion
+                      <% end %>
+</p>
+          <p class="pill-box">
+          <%= icon("fa-solid fa-calculator", style:"color: #ee7d45;")%>
+          460 calories
+  </p>
+</div>
+
+  <p>Ingredients:</p>
+  <div class="recipe-ing">
+  <% @recipe.recipe_food_item.each do |ing| %>
+  <p><%= ing.food_item.name %></p>
+    <% end %>
+    </div>
+  <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id)%>
+</div>

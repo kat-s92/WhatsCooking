@@ -2,11 +2,18 @@
 display: flex;
 flex-direction: column;
 padding: 0px 24px;
+
+img {
+  height:100%;
+  object-fit: cover;
+  width:89px;
+  }
 }
 
 h1{
   font-size:$main-header;
   color: $primary-color;
+  font-family: $main-header-font;
 }
 
 .recipe-card {
@@ -17,8 +24,8 @@ h1{
   position: relative;
   overflow: hidden;
   box-shadow: 3px 8px 24px 0px rgba(0, 0, 0, 0.09);
-margin-bottom:16px;
-border: 0.25px solid $secondary-text-color
+  margin-bottom:16px;
+  border: 0.25px solid $secondary-text-color
 }
 
 .card-contents{
@@ -27,18 +34,20 @@ border: 0.25px solid $secondary-text-color
 
 h2 {
   font-size:$sub-header;
-  color:$text-color
+  color:$text-color;
+  font-family: $main-header-font;
 }
 
 h3 {
   font-size:$card-header;
   color: $primary-color;
   font-weight: bolder;
-margin-bottom:0;
+  margin-bottom:0;
 }
 
 .chef-name {
   color: $secondary-text-color;
+  font-family: $headers-font;
 }
 
 p {
@@ -46,7 +55,7 @@ p {
   margin:0;
 }
 
-.duration {
+.pill-box {
   margin-top:8px;
   padding:4px;
   background-color: $secondary-color;
@@ -57,11 +66,11 @@ p {
 }
 
 
-img {
-height:100%;
-object-fit: cover;
-width:89px;
-}
+// img {
+// height:100%;
+// object-fit: cover;
+// width:89px;
+// }
 
 .recipe-card-link{
   position: absolute;

@@ -34,10 +34,14 @@
       <p><%= "No reviews yet" %>
       </p>
       <% end %>
-      <p class="duration"><%= recipe.duration%> min</p>
-      <p class="duration">
+      <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= recipe.duration%> min</p>
+      <p class="pill-box">
         <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
-        <%= recipe.portion_size%>
+        <% if recipe.portion_size > 1 %>
+        <%= recipe.portion_size%> portions
+              <% else %>
+                      <%= recipe.portion_size%> portion
+                      <% end %>
         </p>
     </div>
            <%= link_to '', recipe_path(recipe), class:'recipe-card-link' %>
