@@ -22,15 +22,23 @@
 
     <div class="card-contents">
       <h3><%= recipe.name %></h3>
-      <p class="chef-name">Chef: <%= recipe.chef.first_name %>
-      <%=recipe.chef.last_name  %></p>
+      <p class="chef-name">
+           <%= icon("fa-solid fa-circle-check" , style:"color: #cc9191;") %>
+           <%= recipe.chef.first_name %>
+          <%=recipe.chef.last_name  %>
+        </p>
       <% if recipe.reviews == true %>
-      <p><%= recipe.reviews.first.rating %></p>
+      <p><%= recipe.reviews.first.rating %>
+      </p>
       <% else %>
-      <p><%= "No reviews yet" %></p>
+      <p><%= "No reviews yet" %>
+      </p>
       <% end %>
       <p class="duration"><%= recipe.duration%> min</p>
-       <p class="duration"><%= recipe.portion_size%></p>
+      <p class="duration">
+        <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
+        <%= recipe.portion_size%>
+        </p>
     </div>
            <%= link_to '', recipe_path(recipe), class:'recipe-card-link' %>
   </div>
