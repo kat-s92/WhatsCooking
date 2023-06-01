@@ -1,5 +1,41 @@
-<h1>Find Today's Recipe</h1>
-<h3>Choose available ingredients</h3>
-<%  @food_categories.each do |food_category| %>
-<%= link_to food_category.name, food_category_food_items_path(food_category) %>
-<% end %>
+<div class = 'food-categories-page'>
+
+  <h1>Find Today's Recipe</h1>
+  <h3>Choose available ingredients</h3>
+
+  <div class = 'food-categories-wrapper'>
+    <%  @food_categories.each do |food_category| %>
+      <div class = 'food-category-card'>
+            <% if food_category.name == 'Vegetables' %>
+              <%= icon("fa-solid fa-carrot", style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Fruits' %>
+              <%= icon("fa-solid fa-apple-whole" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Dairy & Cheese' %>
+              <%= icon("fa-solid fa-cow" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Meat' %>
+              <%= icon("fa-solid fa-drumstick-bite" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Poultry' %>
+              <%= icon("fa-solid fa-egg" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Seafood' %>
+              <%= icon("fa-solid fa-fish" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Carbs' %>
+              <%= icon("fa-solid fa-bread-slice" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Spices' %>
+            <%= icon("fa-solid fa-mortar-pestle" , style:"color: #FFFFFF;") %>
+
+            <% elsif food_category.name == 'Legumes' %>
+              <%= icon("fa-solid fa-seedling" , style:"color: #FFFFFF;") %>
+            <% else %>
+            <% end %>
+          <%= link_to food_category.name, food_category_food_items_path(food_category) %>
+      </div>
+    <% end %>
+  </div>
+</div>

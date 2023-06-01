@@ -1,0 +1,19 @@
+.food-categories-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 20px;
+
+
+}
+
+.food-category-card {
+  background-color: $primary-color;
+  color: $white;
+  display: flex;
+  border-radius: 20px;
+  height: 80px;
+}
+
+.food-categories-page {
+  padding: 20px;
+}
