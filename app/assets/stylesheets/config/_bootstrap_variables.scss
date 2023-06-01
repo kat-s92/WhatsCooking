@@ -8,23 +8,58 @@
 $font-family-sans-serif: $body-font;
 $headings-font-family:   $headers-font;
 
+// COLORS:
+$white: #ffff;
+$primary-color: #EE7D45;
+$secondary-color: #FFE047;
+$text-color: #6D0000;
+$secondary-text-color: #CC9191;
+
+
 $body-bg:                $white;
 $main-header:            20px;
-$sub-header:             14px;
-$card-header:            16px;
+$sub-header:             16px;
+$card-header:            14px;
 $text:                   12px;
 
-// Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+// Colors NOT USING:
+// $body-color: $gray;
+// $primary:    $blue;
+// $success:    $green;
+// $info:       $yellow;
+// $danger:     $red;
+// $warning:    $orange;
+
+
+
 
 // Buttons & inputs' radius
 $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
+
+
+
 // Override other variables below!
+// USE THESE FOR HEADINGS:
+
+// h1{
+//   font-size:$main-header;
+//   color: $primary-color;
+//   font-family: $main-header-font;
+// }
+
+// h2 {
+//   font-size:$sub-header;
+//   color:$text-color;
+//   font-family: $main-header-font;
+// }
+
+// RECIPE CARD HEADER:
+// h3 {
+//   font-size:$card-header;
+//   color: $primary-color;
+//   font-weight: bolder;
+//   margin-bottom:0;
+// }

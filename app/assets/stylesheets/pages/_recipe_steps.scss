@@ -1,0 +1,19 @@
+.step-no{
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+}
+
+.recipe-step-img img {
+  height: 192px;
+  width:100%;
+  object-fit: cover;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+
+.swiper-pagination {
+background-color:$primary-color;
+height:8px;
+}

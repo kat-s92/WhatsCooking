@@ -5,19 +5,44 @@
   <% @recipes.each do |recipe| %>
   <div class="recipe-card">
       <div class="recipe-card-img">
-      <%= cl_image_tag("bruna-branco-t8hTmte4O_g-unsplash_wrrwuh.jpg") %>
-      </div>
+      <% if recipe.id == 1 %>
+      <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
+      <% elsif recipe.id == 2 %>
+      <%= image_tag("recipe_imgs/recipe2cover.jpg")%>
+      <% elsif recipe.id == 3 %>
+      <%= image_tag("recipe_imgs/recipe3cover.jpg")%>
+      <% elsif recipe.id == 4 %>
+      <%= image_tag("recipe_imgs/recipe4cover.jpg")%>
+        <% elsif recipe.id == 5 %>
+      <%= image_tag("recipe_imgs/recipe5cover.jpg")%>
+      <% elsif recipe.id == 6 %>
+      <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
+      <% end %>
+  </div>
 
     <div class="card-contents">
       <h3><%= recipe.name %></h3>
-      <p class="chef-name">Chef: <%= recipe.chef.first_name %>
-      <%=recipe.chef.last_name  %></p>
+      <p class="chef-name">
+           <%= icon("fa-solid fa-circle-check" , style:"color: #cc9191;") %>
+           <%= recipe.chef.first_name %>
+            <%=recipe.chef.last_name  %>
+        </p>
       <% if recipe.reviews == true %>
-      <p><%= recipe.reviews.first.rating %></p>
+      <p><%= recipe.reviews.first.rating %>
+      </p>
       <% else %>
-      <p><%= "No reviews yet" %></p>
+      <p><%= "No reviews yet" %>
+      </p>
       <% end %>
-      <p class="duration"><%= recipe.duration%> min</p>
+      <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= recipe.duration%> min</p>
+      <p class="pill-box">
+        <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
+        <% if recipe.portion_size > 1 %>
+        <%= recipe.portion_size%> portions
+              <% else %>
+                      <%= recipe.portion_size%> portion
+                      <% end %>
+        </p>
     </div>
            <%= link_to '', recipe_path(recipe), class:'recipe-card-link' %>
   </div>

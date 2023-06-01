@@ -1,9 +1,10 @@
 <div class="container">
-  <h3>Cooking Steps</h3>
+
     <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="false">
         <% @recipe_steps.each_with_index do |step, i| %>
          <swiper-slide>
-          <p>Step <%= i+=1 %></p>
+         <div class="recipe-step-img"><%= image_tag("recipe_imgs/recipe1cover.jpg")%></div>
+          <p class="step-no">Step <%= i+=1 %></p>
           <p>Duration: <%= step.duration %></p>
           <p><%= step.description %></p>
           <% if i == @recipe_steps.count %>
