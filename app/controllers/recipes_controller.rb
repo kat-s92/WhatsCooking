@@ -16,7 +16,6 @@ class RecipesController < ApplicationController
     #   @ratings << review.rating
     #   end
     # end
-
   end
 
   def show
