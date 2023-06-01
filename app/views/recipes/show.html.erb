@@ -1,3 +1,11 @@
+<h1>Recipe</h1>
+<h2>Rating: <%= @average %></h2>
+<% @recipe.recipe_food_item.each do |ing| %>
+ <p><%= ing.food_item.name %></p>
+  <% end %>
+
+<%= link_to 'Cooking Steps', recipe_steps_path(@recipe.id)%>
+
 <div class="recipe-container">
   <h1>Your Chosen Recipe</h1>
   <div class="recipe-img">
