@@ -18,14 +18,14 @@
       <% elsif recipe.id == 6 %>
       <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
       <% end %>
-      </div>
+  </div>
 
     <div class="card-contents">
       <h3><%= recipe.name %></h3>
       <p class="chef-name">
            <%= icon("fa-solid fa-circle-check" , style:"color: #cc9191;") %>
            <%= recipe.chef.first_name %>
-          <%=recipe.chef.last_name  %>
+            <%=recipe.chef.last_name  %>
         </p>
       <% if recipe.reviews == true %>
       <p><%= recipe.reviews.first.rating %>
