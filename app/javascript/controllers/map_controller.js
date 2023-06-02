@@ -27,9 +27,6 @@ export default class extends Controller {
       );
   }
 
-
-
-
   #addMarkersToMap(){
     this.markersValue.forEach((marker) => {
       const shop_info = new mapboxgl.Popup().setHTML(marker.shop_info)

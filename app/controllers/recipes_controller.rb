@@ -7,15 +7,6 @@ class RecipesController < ApplicationController
     recipes_with_selected_products = recipe_food_items.select { |_recipe_id, count| count > 0 }
     recipes_with_selected_products = recipes_with_selected_products.keys
     @recipes = Recipe.find(recipes_with_selected_products)
-
-    # Will need to do this way once we have more recipes with reviews
-    # @ratings = []
-    # @recipes.each do |recipe|
-    #   reviews = recipe.reviews
-    #   reviews.each do |review|
-    #   @ratings << review.rating
-    #   end
-    # end
   end
 
   def show
@@ -33,7 +24,7 @@ class RecipesController < ApplicationController
 
   def missing_items
     @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.ingredients
+    @ingredients = @recipe.recipe_food_items
     # storing in a varibale the selected ingredients
     # missing items = ingredients - selected items
   end

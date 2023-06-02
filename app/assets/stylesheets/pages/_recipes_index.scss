@@ -13,7 +13,7 @@ img {
 h1{
   font-size:$main-header;
   color: $primary-color;
-  font-family: $main-header-font;
+  font-family: $headers-font;
 }
 
 .recipe-card {
@@ -35,7 +35,7 @@ h1{
 h2 {
   font-size:$sub-header;
   color:$text-color;
-  font-family: $main-header-font;
+  font-family: $headers-font;
 }
 
 h3 {
