@@ -1,9 +1,18 @@
-<p>Shopping Cart Show Page, missing Items will go here</p>
+<div class="shopping-cart">
+<h1>Shopping List</h1>
+  <h2>Find a supermarket near you</h2>
+  <div class="map-filters">
+  <%= link_to "Edeka", shopping_cart_path(@shop, filter: "Edeka"), class:"pill-box" %>
+  <%= link_to "Rewe", shopping_cart_path(@shop, filter: "Rewe"), class:"pill-box"%>
+  <%= link_to "BioMarkt", shopping_cart_path(@shop, filter: "BioMarkt"), class:"pill-box" %>
+  <%= link_to "Lidl", shopping_cart_path(@shop, filter: "Lidl"), class:"pill-box" %>
+  <%= link_to "Aldi", shopping_cart_path(@shop, filter: "Aldi"), class:"pill-box" %>
+</div>
 
-<p>MAP:</p>
 <div data-controller="map"
 id='map'
 data-map-api-key-value="<%= ENV['MAPBOX_API_KEY']%>"
 data-map-markers-value= "<%= @markers.to_json %>"
-style='width: 400px; height: 300px;'>
+style='width: 370px; height: 300px;'>
+</div>
 </div>
