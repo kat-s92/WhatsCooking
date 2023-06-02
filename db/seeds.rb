@@ -266,23 +266,91 @@ recipeonestepfive = RecipeStep.new do |s|
 end
 recipeonestepfive.save
 
-rewe = Shop.create(
+# REWE
+reweone = Shop.create(
   name: "Rewe",
   address: "Friedrichstraße 60, 10117, Berlin",
   opening_hours: "7:00am - 11:30pm"
 )
+rewetwo = Shop.create(
+  name: "Rewe",
+  address: "Friedrichstraße 67-70, 10117 Berlin",
+  opening_hours: "8:00am - 10:00pm"
+)
+rewethree = Shop.create(
+  name: "Rewe",
+  address: "Friedrichstraße 100, 10117 Berlin",
+  opening_hours: "7:00am - 10:00pm"
+)
 
-edeka = Shop.create(
+# EDEKA
+edekaone = Shop.create(
   name: "Edeka",
   address: "Friedrichstraße 67-70, 10117 Berlin",
   opening_hours: "7:00am - 11:30pm"
 )
+edekatwo = Shop.create(
+  name: "Edeka",
+  address: "Friedrichstraße 246, 10969 Berlin",
+  opening_hours: "7:00am - 10:00pm"
+)
+edekathree = Shop.create(
+  name: "Edeka",
+  address: "Leipziger Pl. 12/13, 10117 Berlin",
+  opening_hours: "9:00am - 10:00pm"
+)
+edekafour = Shop.create(
+  name: "Edeka",
+  address: "Friedrichstraße 142, 10117 Berlin",
+  opening_hours: "6:00am - 10:00pm"
+)
 
-biomarkt = Shop.create(
+# BIOMARKT
+biomarktone = Shop.create(
   name: "BioMarkt",
   address: "Rudi-Dutschke-Straße 17, 10969 Berlin",
   opening_hours: "7:00am - 11:30pm"
 )
+biomarkttwo = Shop.create(
+  name: "BioMarkt",
+  address: "Friedrichstraße 136, 10117 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+biomarktthree = Shop.create(
+  name: "BioMarkt",
+  address: "Oranienstraße 140-142, 10969 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+biomarktfour = Shop.create(
+  name: "BioMarkt",
+  address: "Annenstraße 48, 10179 Berlin",
+  opening_hours: "7:00am - 11:30pm"
+)
+
+# LIDL
+lidlone = Shop.create(
+  name: "Lidl",
+  address: "Charlottenstraße 2, 10969 Berlin",
+  opening_hours: "7:00am - 900pm"
+)
+lidltwo = Shop.create(
+  name: "Lidl",
+  address: "Leipziger Str. 42, 10117 Berlin",
+  opening_hours: "7:00am - 900pm"
+)
+
+# ALDI
+aldione = Shop.create(
+  name: "Aldi",
+  address: "Friedrichstraße 149, 10117 Berlin",
+  opening_hours: "7:00am - 900pm"
+)
+alditwo = Shop.create(
+  name: "Aldi",
+  address: "Mall of Berlin, Leipziger Pl. 12, 10117 Berlin",
+  opening_hours: "7:00am - 900pm"
+)
+
 
 user = User.create(
   first_name: "Sam",

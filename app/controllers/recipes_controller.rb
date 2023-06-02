@@ -27,7 +27,8 @@ class RecipesController < ApplicationController
     @clean_array = @array_ratings.reject do |rating|
       rating == nil
     end
-    @average = @clean_array.sum / @clean_array.length
+    # @average = @clean_array.sum / @clean_array.length
+    @average = @clean_array.empty? ? 0 : (@clean_array.sum / @clean_array.length)
   end
 
   def missing_items

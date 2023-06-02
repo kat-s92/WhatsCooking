@@ -1,11 +1,3 @@
-<h1>Recipe</h1>
-<h2>Rating: <%= @average %></h2>
-<% @recipe.recipe_food_item.each do |ing| %>
- <p><%= ing.food_item.name %></p>
-  <% end %>
-
-<%= link_to 'Cooking Steps', recipe_steps_path(@recipe.id)%>
-
 <div class="recipe-container">
   <h1>Your Chosen Recipe</h1>
   <div class="recipe-img">
@@ -40,6 +32,7 @@
           460 calories
   </p>
 </div>
+<h2>Rating: <%= @average %></h2>
 <h2>Description</h2>
   <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
 <br>
