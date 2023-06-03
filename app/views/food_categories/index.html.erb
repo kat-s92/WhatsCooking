@@ -37,5 +37,9 @@
           <%= link_to food_category.name, food_category_food_items_path(food_category) %>
       </div>
     <% end %>
+     <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 15 min</p>
+      <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 15 - 30 min</p>
+       <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 30 - 45 min</p>
   </div>
+   <%= link_to 'Recipe', recipes_path %>
 </div>
