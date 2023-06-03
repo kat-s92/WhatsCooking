@@ -45,3 +45,18 @@
 
   <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
 </div>
+
+
+<% if @recipe.reviews.empty? %>
+<% else %>
+  <h3 class = 'page-tertiary-header'>See what others think </h3>
+  <div class = 'review-card'>
+      <% @recipe.reviews.each do |review| %>
+        <div class = 'review-giver'><i class="fa-solid fa-user" style="color: #1b9aaa;"></i> <%= current_user.first_name%></div>
+        <% review.rating.to_i.times do |star| %>
+            <i class="fa-solid fa-star" style="color: #fed401;"></i>
+        <% end %>
+        <%= review.comment %><br><br>
+      <% end %>
+  <% end %>
+</div>
