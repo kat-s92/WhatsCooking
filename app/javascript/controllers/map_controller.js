@@ -12,10 +12,19 @@ export default class extends Controller {
         container: this.element, // container ID
         style: 'mapbox://styles/mapbox/streets-v12',// style URL
         center: [13.3901527, 52.5105718],
-        zoom: 14,
+        zoom: 13,
         // starting zoom
     });
     this.#addMarkersToMap()
+    this.map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true,
+      showUserHeading: true
+      })
+      );
   }
 
   #addMarkersToMap(){

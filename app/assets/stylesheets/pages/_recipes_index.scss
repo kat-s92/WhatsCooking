@@ -13,7 +13,7 @@ img {
 h1{
   font-size:$main-header;
   color: $primary-color;
-  font-family: $main-header-font;
+  font-family: $headers-font;
 }
 
 .recipe-card {
@@ -35,7 +35,7 @@ h1{
 h2 {
   font-size:$sub-header;
   color:$text-color;
-  font-family: $main-header-font;
+  font-family: $headers-font;
 }
 
 h3 {
@@ -57,7 +57,7 @@ p {
 
 .pill-box {
   margin-top:8px;
-  padding:4px;
+  padding:4px 8px;
   background-color: $secondary-color;
   border: 0.5px solid $primary-color;
   border-radius: 25px;
