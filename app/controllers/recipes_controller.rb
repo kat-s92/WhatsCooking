@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   def missing_items
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.recipe_food_items
-    # storing in a varibale the selected ingredients
+     # storing in a varibale the selected ingredients
     # missing items = ingredients - selected items
   end
 end
