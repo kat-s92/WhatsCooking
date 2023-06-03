@@ -1,16 +1,18 @@
-<h1>Find Today's Recipe</h1>
-<h3>Choose available ingredients</h3>
+<div class = 'food-item-page'>
+  <h1>Find Today's Recipe</h1>
+  <h3>Choose available ingredients</h3>
 
-<%= simple_form_for :food_item, url:  recipes_path, method: :get do |f| %>
-<% food_array = @food_items.map do |food| food.name end %>
+  <%= simple_form_for :food_item, url:  root_path, method: :get do |f| %>
+  <% food_array = @food_items.map do |food| food.name end %>
 
-<%= f.input :your_selection,
-            as: :check_boxes,
-            multiple: true,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {multiple:true, class: 'category-selector'},
-            collection: @food_items.map {|food|[food.name, food.id, style:"background-image:url(#{image_path "#{food.name.downcase}.jpg"})"]} %>
-<%= f.submit "Done", class: "btn btn-primary", style:"color:white"%>
-<% end %>
+  <%= f.input :your_selection,
+              as: :check_boxes,
+              multiple: true,
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {multiple:true, class: 'category-selector'},
+              collection: @food_items.map {|food|[food.name, food.id, style:"background-image:url(#{image_path "#{food.name.downcase}.jpg"})"]} %>
+  <%= f.submit "Done", class: "primary-btn", style:"border: none"%>
+  <% end %>
+</div>
