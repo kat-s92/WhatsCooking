@@ -6,13 +6,14 @@
   <div class = 'food-categories-wrapper'>
     <%  @food_categories.each do |food_category| %>
       <div class = 'food-category-card'>
+          <div class = 'food-category-icon'>
             <% if food_category.name == 'Vegetables' %>
-              <%= icon("fa-solid fa-carrot", style:"color: #FFFFFF;") %>
+             <%= icon("fa-solid fa-carrot", style:"color: #FFFFFF;") %>
 
             <% elsif food_category.name == 'Fruits' %>
               <%= icon("fa-solid fa-apple-whole" , style:"color: #FFFFFF;") %>
 
-            <% elsif food_category.name == 'Dairy & Cheese' %>
+            <% elsif food_category.name == 'Dairy' %>
               <%= icon("fa-solid fa-cow" , style:"color: #FFFFFF;") %>
 
             <% elsif food_category.name == 'Meat' %>
@@ -34,12 +35,16 @@
               <%= icon("fa-solid fa-seedling" , style:"color: #FFFFFF;") %>
             <% else %>
             <% end %>
-          <%= link_to food_category.name, food_category_food_items_path(food_category) %>
+          </div>
+            <div class = 'food-category-name'><%= food_category.name %></div>
+            <%= link_to '', food_category_food_items_path(food_category), class: 'card-link'  %>
+
       </div>
     <% end %>
-     <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 15 min</p>
-      <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 15 - 30 min</p>
-       <p class="pill-box"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 30 - 45 min</p>
+     <p class="time-btn"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 05-15 mins</p>
+      <p class="time-btn"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 15-30 mins</p>
+       <p class="time-btn"> <%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> 30-45 mins</p>
+
   </div>
-   <%= link_to 'Recipe', recipes_path %>
+      <%= link_to 'Show me recipes', recipes_path, class: 'primary-btn'%>
 </div>
