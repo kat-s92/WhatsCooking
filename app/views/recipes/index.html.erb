@@ -27,8 +27,11 @@
            <%= recipe.chef.first_name %>
             <%=recipe.chef.last_name  %>
         </p>
-      <% if recipe.reviews == true %>
-      <p><%= recipe.reviews.first.rating %>
+
+      <% if recipe.reviews %>
+      <p> <% average_rating = recipe.reviews.average(:rating) %>
+        <%= average_rating ? average_rating.round(1) : 'No ratings yet' %>
+        <span> out of <%= recipe.reviews.length %> reviews </span>
       </p>
       <% else %>
       <p><%= "No reviews yet" %>

@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     recipes_with_selected_products = recipe_food_items.select { |_recipe_id, count| count > 1 }
     recipes_with_selected_products = recipes_with_selected_products.keys
     @recipes = Recipe.find(recipes_with_selected_products)
+    # self.show
   end
 
   def show
@@ -21,7 +22,7 @@ class RecipesController < ApplicationController
       rating == nil
     end
     # @average = @clean_array.sum / @clean_array.length
-    @average = @clean_array.empty? ? 0 : (@clean_array.sum / @clean_array.length)
+    @average = @clean_array.empty? ? 0 : (@clean_array.sum.to_f / @clean_array.length).round(1)
   end
 
   def missing_items
