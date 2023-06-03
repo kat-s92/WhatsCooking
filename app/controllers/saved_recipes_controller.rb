@@ -9,15 +9,29 @@ class SavedRecipesController < ApplicationController
   end
 
   def create
-    @saved_recipe = SavedRecipe.new(params[:id])
-    @saved_recipe.user_id = current_user.id
-    @saved_recipe.save
-    redirect_to saved_recipes_path
+    if SavedRecipe.where(user_id: current_user.id,
+      recipe_id: params[:recipe_id]).exists?
+      @recipe = Recipe.find(params[:recipe_id])
+      redirect_to recipe_path(@recipe)
+    else
+      @recipe = Recipe.find(params[:recipe_id])
+      @saved_recipe = SavedRecipe.new
+      @saved_recipe.user = current_user
+      # raise
+      @saved_recipe.recipe = @recipe
+      @saved_recipe.save
+    end
+    redirect_to recipe_path(@recipe)      # raise
   end
 
   def destroy
     @saved_recipe = SavedRecipe.find(params[:id])
+    @recipe = @saved_recipe.recipe
     @saved_recipe.destroy
-    redirect_to saved_recipes_path
+    redirect_to recipe_path(@recipe)
+  end
+
+  def saved_recipe_params
+    params.require(:saved_recipe).permit(:recipe_id)
   end
 end

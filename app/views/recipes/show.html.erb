@@ -1,5 +1,24 @@
 <div class="recipe-container">
-  <h1>Your Chosen Recipe</h1>
+  <h1> <%= @recipe.name %></h1>
+
+<% if @saved_recipe.present? %>
+      <div class="icon-wrapper">
+       <%= link_to saved_recipe_path(@saved_recipe), data: {turbo_method: :delete }, class: "btn" do %>
+          <i class="fa-solid fa-heart fa-2x"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon-wrapper">
+        <%= simple_form_for [@recipe, SavedRecipe.new] do |f| %>
+          <%= f.button :button do %>
+            <i class="fa-regular fa-heart fa-2x"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
+
+
   <div class="recipe-img">
       <% if @recipe.id == 1 %>
       <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
@@ -16,7 +35,6 @@
       <% end %>
       </div>
 
-  <h2> <%= @recipe.name %></h2>
 <div class="recipe-info">
   <p class="pill-box"><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= @recipe.duration%> min</p>
         <p class="pill-box">
@@ -41,6 +59,8 @@
   <% @recipe.recipe_food_item.each do |ing| %>
   <h3><%= ing.food_item.name %></h3>
     <% end %>
+
+
     </div>
 
   <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
