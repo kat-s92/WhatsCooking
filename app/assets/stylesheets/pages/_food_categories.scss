@@ -2,8 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px 20px;
-
-
+  padding: 20px;
 }
 
 .food-category-card {
@@ -11,9 +10,65 @@
   color: $white;
   display: flex;
   border-radius: 20px;
-  height: 80px;
+  height: 90px;
+  width: 90px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.food-category-icon {
+  padding-bottom: 1px;
+  font-size: xx-large;
+  color: white;
+}
+
+.food-category-name {
+  font-size:small;
+}
+
+.time-btn {
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:5px 10px;
+  background-color: $white;
+  border: 0.9px solid $text-color;
+  border-radius: 25px;
+  color: $text-color;
+  display: inline-block;
+  text-align: center;
+  font-size: small;
+
+}
+
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .food-categories-page {
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+    h1 {
+      color: $text-color;
+      font-size: $main-header;
+      margin-left: 20px;
+    }
+
+    h3 {
+      color: $text-color;
+      font-size: $main-header;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
 }

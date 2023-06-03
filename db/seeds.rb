@@ -12,7 +12,7 @@ FoodItem.destroy_all
 puts "Creating Categories"
 vegetables = FoodCategory.create(name: "Vegetables")
 fruits = FoodCategory.create(name: "Fruits")
-dairyandcheese = FoodCategory.create(name: "Dairy & Cheese")
+dairyandcheese = FoodCategory.create(name: "Dairy")
 meat = FoodCategory.create(name: "Meat")
 poultry = FoodCategory.create(name: "Poultry")
 seafood = FoodCategory.create(name: "Seafood")
