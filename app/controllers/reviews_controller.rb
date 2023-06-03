@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @recipe = @review.recipe
     if @review.save
-      redirect_to  recipe_step_path(params["recipe_id"].to_i)
+      redirect_to  recipe_path(params["recipe_id"].to_i)
     else
       render :new, status: :bad_request
     end

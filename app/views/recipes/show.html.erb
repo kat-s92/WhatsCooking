@@ -50,7 +50,7 @@
           460 calories
   </p>
 </div>
-<h2>Rating: <%= @average %></h2>
+<h2>Rating: <%= @average %> (<%= @clean_array.length %> Reviews) </h2>
 <h2>Description</h2>
   <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
 <br>
@@ -62,6 +62,8 @@
 
 
     </div>
+
+
 
   <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
 </div>
