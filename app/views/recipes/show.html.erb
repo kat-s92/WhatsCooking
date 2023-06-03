@@ -1,5 +1,5 @@
 <div class="recipe-container">
-  <h1>Your Chosen Recipe</h1>
+  <h1> <%= @recipe.name %></h1>
   <div class="recipe-img">
       <% if @recipe.id == 1 %>
       <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
@@ -16,7 +16,6 @@
       <% end %>
       </div>
 
-  <h2> <%= @recipe.name %></h2>
 <div class="recipe-info">
   <p class="pill-box"><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= @recipe.duration%> min</p>
         <p class="pill-box">
@@ -32,6 +31,25 @@
           460 calories
   </p>
 </div>
+
+<% if @saved_recipe.present? %>
+      <div class="icon-wrapper">
+       <%= link_to saved_recipe_path(@saved_recipe), data: {turbo_method: :delete }, class: "btn" do %>
+
+          <p><i class="fa-solid fa-heart fa-2x", style="color:#E4425F"></i> Saved</p>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="icon-wrapper">
+        <%= simple_form_for [@recipe, SavedRecipe.new] do |f| %>
+          <%= f.button :button do %>
+                      <p><i class="fa-regular fa-heart fa-2x" , style="color:#E4425F"></i> Save</p>
+          <% end %>
+        <% end %>
+
+      </div>
+    <% end %>
+
 <h2>Rating: <%= @average %> (<%= @clean_array.length %> Reviews) </h2>
 <h2>Description</h2>
   <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>

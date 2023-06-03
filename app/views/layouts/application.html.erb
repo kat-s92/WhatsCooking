@@ -18,8 +18,9 @@
 
   <body><%= render "shared/navbar" %>
 <%= render "shared/flashes" %>
-
+  <body>
     <%= yield %>
+  <%= render "shared/bottom_nav" %>
   </body>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 </html>
