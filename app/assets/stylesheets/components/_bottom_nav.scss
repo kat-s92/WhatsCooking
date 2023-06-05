@@ -1,0 +1,29 @@
+.bottom-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding:4px 64px;
+  position:sticky;
+  bottom:0;
+  z-index: 1;
+  background-color: white;
+}
+
+.bottom-nav-item{
+  position: relative;
+  color: $primary-color;
+  font-size: xx-large;
+}
+
+.bottom-nav-item-empty{
+ color:#ffc9ab;
+ font-size: xx-large;
+}
+
+.btn-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

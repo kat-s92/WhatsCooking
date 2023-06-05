@@ -8,13 +8,30 @@ img {
   object-fit: cover;
   width:89px;
   }
+
+  h2 {
+    font-size:$sub-header;
+    color:$text-color;
+    font-family: $headers-font;
+  }
+
+  h3 {
+    font-size:$card-header;
+    color: $primary-color;
+    font-weight: bolder;
+    margin-bottom:0;
+  }
+
+
+  h1{
+    font-size:$main-header;
+    color: $primary-color;
+    font-family: $headers-font;
+  }
+
+
 }
 
-h1{
-  font-size:$main-header;
-  color: $primary-color;
-  font-family: $headers-font;
-}
 
 .recipe-card {
   display: flex;
@@ -32,18 +49,7 @@ h1{
   padding:10px;
 }
 
-h2 {
-  font-size:$sub-header;
-  color:$text-color;
-  font-family: $headers-font;
-}
 
-h3 {
-  font-size:$card-header;
-  color: $primary-color;
-  font-weight: bolder;
-  margin-bottom:0;
-}
 
 .chef-name {
   color: $secondary-text-color;

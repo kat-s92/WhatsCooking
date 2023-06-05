@@ -1,4 +1,4 @@
-<div class="container">
+<div class="recipe-steps">
 
     <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="false">
         <% @recipe_steps.each_with_index do |step, i| %>
@@ -9,7 +9,7 @@
           <p><%= step.description %></p>
           <% if i == @recipe_steps.count %>
           <%= render "reviews/review", review:@review, recipe:@recipe %>
-           <%= link_to 'Review Recipe', new_recipe_review_path(params[:recipe_id]) %>
+
           <% end %>
         </swiper-slide>
     <% end %>

@@ -48,4 +48,15 @@
 
 .food-item-page {
   padding: 20px;
+  h1 {
+    color: $text-color;
+    font-size: $main-header;
+  }
+
+  h2 {
+    color: $text-color;
+    font-size: $sub-header;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
 }

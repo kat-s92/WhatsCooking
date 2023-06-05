@@ -1,3 +1,8 @@
+.recipe-steps{
+  p{
+    font-size: 14px;
+  }
+}
 .step-no{
   border: 1px solid $primary-color;
   border-radius: 50%;
@@ -11,7 +16,6 @@
   margin-bottom: 16px;
   border-radius: 2px;
 }
-
 
 .swiper-pagination {
 background-color:$primary-color;
