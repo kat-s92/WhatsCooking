@@ -14,14 +14,6 @@
 # Configure Using Gemfile
 # gem "pg"
 #
-
-production:
-  <<: *default
-  database: WhatsCooking_production
-  username: WhatsCooking
-  password: <%= ENV["WHATSCOOKING_DATABASE_PASSWORD"] %>
-
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -32,6 +24,12 @@ default: &default
 development:
   <<: *default
   database: WhatsCooking_development
+
+production:
+  <<: *default
+  database: WhatsCooking_production
+  username: WhatsCooking
+  password: <%= ENV["WHATSCOOKING_DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -66,7 +64,6 @@ development:
 test:
   <<: *default
   database: WhatsCooking_test
-
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
