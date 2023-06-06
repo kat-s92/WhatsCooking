@@ -34,9 +34,9 @@
       <i class="fa-solid fa-star" style="color: #fed401;"></i>
 
 
-       <% average_rating = recipe.reviews.average(:rating) %>
+       <% average_rating = recipe.reviews.average(:rating).to_i %>
         <%= average_rating ? average_rating.round(1) : 'No ratings yet' %>
-        <span> (<%= recipe.reviews.length %>) reviews </span>
+        <span> (<%= recipe.reviews.length %> reviews) </span>
       </p>
       <% else %>
       <p><%= "No reviews yet" %>

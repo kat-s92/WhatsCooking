@@ -1,0 +1,47 @@
+.saved-recipes{
+  position: relative;
+  padding:0 20px;
+  h1{
+    font-size:$main-header;
+    color: $text-color;
+    font-family: $headers-font;
+    margin-bottom:16px;
+  }
+
+  h3 {
+    font-size:$card-header;
+    color: $primary-color;
+    font-weight: bolder;
+    margin-bottom:0;
+    }
+    img {
+      object-fit: cover;
+      width:42px;
+      height:42px;
+      border-radius: 50%;
+      }
+}
+
+.saved-recipe-card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.saved-recipe-card{
+  padding:10px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  gap:16px;
+  align-items: center;
+  position: relative;
+  box-shadow: 3px 8px 24px 0px rgba(0, 0, 0, 0.09);
+  margin-bottom:16px;
+  border: 0.25px solid $secondary-text-color;
+}
+
+// .recipe-card-img

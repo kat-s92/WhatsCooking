@@ -1,11 +1,9 @@
 .recipe-steps{
+  padding: 4px 16px 32px 16px;
   p{
     font-size: 14px;
+    padding-left:20px;
   }
-}
-.step-no{
-  border: 1px solid $primary-color;
-  border-radius: 50%;
 }
 
 .recipe-step-img img {
@@ -16,8 +14,13 @@
   margin-bottom: 16px;
   border-radius: 2px;
 }
+.recipe-step-info{
+ margin-bottom: 32px;
 
-.swiper-pagination {
-background-color:$primary-color;
-height:8px;
 }
+
+
+
+// .slot.recipe-step-info{
+//   padding: 16px;
+// }

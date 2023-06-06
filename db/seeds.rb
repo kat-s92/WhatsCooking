@@ -266,35 +266,31 @@ recipeonestepfive = RecipeStep.new do |s|
 end
 recipeonestepfive.save
 
-RECIPE STEPS 2
-
-
-
-recipeonestepone = RecipeStep.create(
+# RECIPE STEPS 2
+recipetwostepone = RecipeStep.create(
   number: 1,
-  description: 'Preheat the oven to 220°C fan. Chop up one of your aubergines into cubes and roast for 30 minutes,
-  stirring halfway through, until deeply browned and softened.',
+  description: 'Preheat the oven',
   duration: 30,
-  recipe_id: recipeone.id
+  recipe_id: recipetwo.id
 )
 
 # STEP2
-recipeonesteptwo = RecipeStep.new do |s|
+recipetwosteptwo = RecipeStep.new do |s|
   s.number = 2
   s.description = 'Grill'
   s.duration = 30
   s.recipe_id = recipetwo.id
 end
-recipeonesteptwo.save
+recipetwosteptwo.save
 
 # STEP3
-recipeonestepthree = RecipeStep.new do |s|
+recipetwostepthree = RecipeStep.new do |s|
   s.number = 3
   s.description = 'Eat'
   s.duration = 7
   s.recipe_id = recipetwo.id
 end
-recipeonestepthree.save
+recipetwostepthree.save
 
 
 
