@@ -1,8 +1,9 @@
 class RecipeStepsController < ApplicationController
   def index
-    @recipe_steps = RecipeStep.all
-    @review = Review.new
     @recipe = Recipe.find(params[:recipe_id])
+    @recipe_steps = @recipe.recipe_steps
+    @review = Review.new
+    # raise
     @array_ratings = []
     @recipe.reviews.each do |review|
       @array_ratings << review.rating

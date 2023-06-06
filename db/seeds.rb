@@ -31,25 +31,25 @@ beetroot = FoodItem.create(name: "Beetroot", food_category_id: vegetables.id, fo
 cauliflower = FoodItem.create(name: "Cauliflower", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/cauliflower.jpg"), filename: "cauliflower.jpg", content_type: "image/jpg" } )
 avocado = FoodItem.create(name: "Avocado", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/avocado.jpg"), filename: "avocado.jpg", content_type: "image/jpg" } )
 pepper = FoodItem.create(name: "Pepper", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/pepper.jpg"), filename: "pepper.jpg", content_type: "image/jpg" } )
-# cabbage = FoodItem.create(name: "Cabbage", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/cabbage.jpg"), filename: "cabbage.jpg", content_type: "image/jpg" } )
-# pumpkin = FoodItem.create(name: "Pumpkin", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/pumpkin.jpg"), filename: "pumpkin.jpg", content_type: "image/jpg" } )
-# carrot = FoodItem.create(name: "Carrot", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/carrot.jpg"), filename: "carrot.jpg", content_type: "image/jpg" } )
-# broccoli = FoodItem.create(name: "Broccoli", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/broccoli.jpg"), filename: "broccoli.jpg", content_type: "image/jpg" } )
-# kale = FoodItem.create(name: "Kale", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/kale.jpg"), filename: "kale.jpg", content_type: "image/jpg" } )
-# asparagus = FoodItem.create(name: "Asparagus", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/asparagus.jpg"), filename: "asparagus.jpg", content_type: "image/jpg" } )
-# spinach = FoodItem.create(name: "Spinach", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/spinach.jpg"), filename: "spinach.jpg", content_type: "image/jpg" } )
-# potato = FoodItem.create(name: "Potato", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/potato.jpg"), filename: "potato.jpg", content_type: "image/jpg" } )
-# mushroom = FoodItem.create(name: "Mushroom", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/mushroom.jpg"), filename: "mushroom.jpg", content_type: "image/jpg" } )
-# squash = FoodItem.create(name: "Squash", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/squash.jpg"), filename: "sqash.jpg", content_type: "image/jpg" } )
-# zucchini = FoodItem.create(name: "Zucchini", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/zucchini.jpg"), filename: "zucchini.jpg", content_type: "image/jpg" } )
-# corn = FoodItem.create(name: "Corn", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/corn.jpg"), filename: "corn.jpg", content_type: "image/jpg" } )
-# raddish = FoodItem.create(name: "Raddish", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/raddish.jpg"), filename: "raddish.jpg", content_type: "image/jpg" } )
-# celery = FoodItem.create(name: "Celery", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/celery.jpg"), filename: "celery.jpg", content_type: "image/jpg" } )
-# leek = FoodItem.create(name: "Leek", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/leek.jpg"), filename: "leek.jpg", content_type: "image/jpg" } )
-# capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/capers.jpg"), filename: "capers.jpg", content_type: "image/jpg" } )
-# olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/olives.jpg"), filename: "olives.jpg", content_type: "image/jpg" } )
-# parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/parsley.jpg"), filename: "parsley.jpg", content_type: "image/jpg" } )
-# coriander = FoodItem.create(name: "Coriander", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/coriander.jpg"), filename: "coriander.jpg", content_type: "image/jpg" } )
+cabbage = FoodItem.create(name: "Cabbage", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/cabbage.jpg"), filename: "cabbage.jpg", content_type: "image/jpg" } )
+pumpkin = FoodItem.create(name: "Pumpkin", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/pumpkin.jpg"), filename: "pumpkin.jpg", content_type: "image/jpg" } )
+carrot = FoodItem.create(name: "Carrot", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/carrot.jpg"), filename: "carrot.jpg", content_type: "image/jpg" } )
+broccoli = FoodItem.create(name: "Broccoli", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/broccoli.jpg"), filename: "broccoli.jpg", content_type: "image/jpg" } )
+kale = FoodItem.create(name: "Kale", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/kale.jpg"), filename: "kale.jpg", content_type: "image/jpg" } )
+asparagus = FoodItem.create(name: "Asparagus", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/asparagus.jpg"), filename: "asparagus.jpg", content_type: "image/jpg" } )
+spinach = FoodItem.create(name: "Spinach", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/spinach.jpg"), filename: "spinach.jpg", content_type: "image/jpg" } )
+potato = FoodItem.create(name: "Potato", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/potato.jpg"), filename: "potato.jpg", content_type: "image/jpg" } )
+mushroom = FoodItem.create(name: "Mushroom", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/mushroom.jpg"), filename: "mushroom.jpg", content_type: "image/jpg" } )
+squash = FoodItem.create(name: "Squash", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/squash.jpg"), filename: "sqash.jpg", content_type: "image/jpg" } )
+zucchini = FoodItem.create(name: "Zucchini", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/zucchini.jpg"), filename: "zucchini.jpg", content_type: "image/jpg" } )
+corn = FoodItem.create(name: "Corn", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/corn.jpg"), filename: "corn.jpg", content_type: "image/jpg" } )
+raddish = FoodItem.create(name: "Raddish", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/raddish.jpg"), filename: "raddish.jpg", content_type: "image/jpg" } )
+celery = FoodItem.create(name: "Celery", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/celery.jpg"), filename: "celery.jpg", content_type: "image/jpg" } )
+leek = FoodItem.create(name: "Leek", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/leek.jpg"), filename: "leek.jpg", content_type: "image/jpg" } )
+capers = FoodItem.create(name: "Capers", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/capers.jpg"), filename: "capers.jpg", content_type: "image/jpg" } )
+olives = FoodItem.create(name: "Olives", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/olives.jpg"), filename: "olives.jpg", content_type: "image/jpg" } )
+parsley = FoodItem.create(name: "Parsley", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/parsley.jpg"), filename: "parsley.jpg", content_type: "image/jpg" } )
+coriander = FoodItem.create(name: "Coriander", food_category_id: vegetables.id, food_image: { io: File.open("app/assets/images/coriander.jpg"), filename: "coriander.jpg", content_type: "image/jpg" } )
 
 # CARBS:
 rice = FoodItem.create(name: "Rice", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/rice.jpg"), filename: "rice.jpg", content_type: "image/jpg" })
@@ -61,13 +61,13 @@ oats = FoodItem.create(name: "Oats", food_category_id: carbs.id, food_image: { i
 cornmeal = FoodItem.create(name: "Cornmeal", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/cornmeal.jpg"), filename: "cornmeal.jpg", content_type: "image/jpg" })
 buckwheat = FoodItem.create(name: "Buckwheat", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/buckwheat.jpg"), filename: "buckwheat.jpg", content_type: "image/jpg" })
 bread = FoodItem.create(name: "Bread", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/bread.jpg"), filename: "bread.jpg", content_type: "image/jpg" })
-# millet = FoodItem.create(name: "Millet", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/millet.jpg"), filename: "millet.jpg", content_type: "image/jpg" })
-# polenta = FoodItem.create(name: "Polenta", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/polenta.jpg"), filename: "polenta.jpg", content_type: "image/jpg" })
-# tapioca = FoodItem.create(name: "Tapioca", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/tapioca.jpg"), filename: "tapioca.jpg", content_type: "image/jpg" })
-# semolina = FoodItem.create(name: "Semolina", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/semolina.jpg"), filename: "semolina.jpg", content_type: "image/jpg" })
-# plantain = FoodItem.create(name: "Plantain", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/plantain.jpg"), filename: "plantain.jpg", content_type: "image/jpg" })
-# cassava = FoodItem.create(name: "Cassava", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/cassava.jpg"), filename: "cassava.jpg", content_type: "image/jpg" })
-# yam = FoodItem.create(name: "Yam", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/yam.jpg"), filename: "yam.jpg", content_type: "image/jpg" })
+millet = FoodItem.create(name: "Millet", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/millet.jpg"), filename: "millet.jpg", content_type: "image/jpg" })
+polenta = FoodItem.create(name: "Polenta", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/polenta.jpg"), filename: "polenta.jpg", content_type: "image/jpg" })
+tapioca = FoodItem.create(name: "Tapioca", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/tapioca.jpg"), filename: "tapioca.jpg", content_type: "image/jpg" })
+semolina = FoodItem.create(name: "Semolina", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/semolina.jpg"), filename: "semolina.jpg", content_type: "image/jpg" })
+plantain = FoodItem.create(name: "Plantain", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/plantain.jpg"), filename: "plantain.jpg", content_type: "image/jpg" })
+cassava = FoodItem.create(name: "Cassava", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/cassava.jpg"), filename: "cassava.jpg", content_type: "image/jpg" })
+yam = FoodItem.create(name: "Yam", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/yam.jpg"), filename: "yam.jpg", content_type: "image/jpg" })
 
 # SPICES:
 cumin = FoodItem.create(name: "Cumin", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cumin.jpg"), filename: "cumin.jpg", content_type: "image/jpg" })
@@ -265,6 +265,37 @@ recipeonestepfive = RecipeStep.new do |s|
   s.recipe_id = recipeone.id
 end
 recipeonestepfive.save
+
+# RECIPE STEPS 2
+recipetwostepone = RecipeStep.create(
+  number: 1,
+  description: 'Preheat the oven',
+  duration: 30,
+  recipe_id: recipetwo.id
+)
+
+# STEP2
+recipetwosteptwo = RecipeStep.new do |s|
+  s.number = 2
+  s.description = 'Grill'
+  s.duration = 30
+  s.recipe_id = recipetwo.id
+end
+recipetwosteptwo.save
+
+# STEP3
+recipetwostepthree = RecipeStep.new do |s|
+  s.number = 3
+  s.description = 'Eat'
+  s.duration = 7
+  s.recipe_id = recipetwo.id
+end
+recipetwostepthree.save
+
+
+
+
+
 
 # REWE
 reweone = Shop.create(

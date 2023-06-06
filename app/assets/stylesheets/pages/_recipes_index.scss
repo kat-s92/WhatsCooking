@@ -8,12 +8,22 @@ img {
   object-fit: cover;
   width:89px;
   }
-}
-
-h1{
-  font-size:$main-header;
-  color: $primary-color;
-  font-family: $headers-font;
+  h2 {
+    font-size:$sub-header;
+    color:$text-color;
+    font-family: $headers-font;
+  }
+  h3 {
+    font-size:$card-header;
+    color: $primary-color;
+    font-weight: bolder;
+    margin-bottom:0;
+  }
+  h1{
+    font-size:$main-header;
+    color: $primary-color;
+    font-family: $headers-font;
+  }
 }
 
 .recipe-card {
@@ -30,19 +40,6 @@ h1{
 
 .card-contents{
   padding:10px;
-}
-
-h2 {
-  font-size:$sub-header;
-  color:$text-color;
-  font-family: $headers-font;
-}
-
-h3 {
-  font-size:$card-header;
-  color: $primary-color;
-  font-weight: bolder;
-  margin-bottom:0;
 }
 
 .chef-name {
@@ -64,13 +61,6 @@ p {
   color: $text-color;
   display: inline-block;
 }
-
-
-// img {
-// height:100%;
-// object-fit: cover;
-// width:89px;
-// }
 
 .recipe-card-link{
   position: absolute;

@@ -1,8 +1,6 @@
 .primary-btn{
-  height: 47px;
-  width: 326px;
-  left: 32px;
-  top: 720px;
+  // height: 47px;
+  width: 100%;
   border-radius: 25px;
   padding: 12px 80px 12px 80px;
   background-color: $secondary-color;
@@ -10,6 +8,31 @@
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.75px;
-  margin: 0 auto;
+  margin: 16px auto;
   text-align: center;
+  // position:sticky;
+  bottom:8px;
+}
+
+.secondary-btn{
+  background-color: $primary-color;
+  color: $white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  border-radius: 25px;
+  padding: 12px 80px 12px 80px;
+  text-align: center;
+  border: none;
+}
+
+.tertiary-btn {
+  color: $text-color;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.75px;
+  text-align: center;
+  border:.5px solid $text-color;
+  padding: 12px;
+  border-radius: 25px;
 }

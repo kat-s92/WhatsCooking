@@ -1,5 +1,48 @@
-<h1>This is the saved recipes view</h1>
-<p><% @saved_recipes.each do |saved_recipe| %>
-<%= saved_recipe.recipe.name %>
-<% end %>
+<div class="saved-recipes">
+  <h1>Your Saved Recipes</h1>
+    <% @saved_recipes.each do |saved_recipe| %>
+  <div class="saved-recipe-card">
+       <div class="recipe-card-img">
+      <% if saved_recipe.recipe.id == 1 %>
+      <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
+      <% elsif saved_recipe.recipe.id == 2 %>
+      <%= image_tag("recipe_imgs/recipe2cover.jpg")%>
+      <% elsif saved_recipe.recipe.id == 3 %>
+      <%= image_tag("recipe_imgs/recipe3cover.jpg")%>
+      <% elsif saved_recipe.recipe.id == 4 %>
+      <%= image_tag("recipe_imgs/recipe4cover.jpg")%>
+        <% elsif saved_recipe.recipe.id == 5 %>
+      <%= image_tag("recipe_imgs/recipe5cover.jpg")%>
+      <% elsif saved_recipe.recipe.id == 6 %>
+      <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
+      <% end %>
+  </div>
+<div class="saved-recipe-info">
+   <h3><%= saved_recipe.recipe.name %></h3>
+      <p class="chef-name">
+           <%= icon("fa-solid fa-circle-check" , style:"color: #cc9191;") %>
+           <%= saved_recipe.recipe.chef.first_name %>
+            <%= saved_recipe.recipe.chef.last_name  %>
+        </p>
+<% if saved_recipe.recipe.reviews %>
+        <p>
+          <i class="fa-solid fa-star" style="color: #fed401;"></i>
+          <% @average_rating = saved_recipe.recipe.reviews.average(:rating) %>
+          <%= @average_rating ? @average_rating.round(1) : 'No ratings yet' %>
+        <span> (<%= saved_recipe.recipe.reviews.length %> reviews) </span>
+        </p>
+      <% else %>
+        <p>
+        <%= "No reviews yet" %>
+      <% end %>
 </p>
+
+
+
+
+
+    </div>
+            <%= link_to '', recipe_path(saved_recipe.recipe_id), class:'saved-recipe-card-link' %>
+  </div>
+    <% end %>
+</div>

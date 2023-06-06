@@ -30,8 +30,6 @@
           <%= icon("fa-solid fa-calculator", style:"color: #ee7d45;")%>
           460 calories
   </p>
-</div>
-
 <% if @saved_recipe.present? %>
       <div class="icon-wrapper">
        <%= link_to saved_recipe_path(@saved_recipe), data: {turbo_method: :delete }, class: "btn" do %>
@@ -46,35 +44,48 @@
                       <p><i class="fa-regular fa-heart fa-2x" , style="color:#E4425F"></i> Save</p>
           <% end %>
         <% end %>
-
       </div>
     <% end %>
+</div>
 
-<h2>Rating: <%= @average %> (<%= @clean_array.length %> Reviews) </h2>
+<div class="recipe-description">
+<p class="reviews"><i class="fa-solid fa-star" style="color: #fed401;"></i> <%= @average %> (<%= @clean_array.length %> Reviews) </p>
+
 <h2>Description</h2>
   <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
 <br>
   <h2>Ingredients</h2>
   <div class="recipe-ing">
   <% @recipe.recipe_food_item.each do |ing| %>
-  <h3><%= ing.food_item.name %></h3>
+  <div class="missing-item">
+  <h2><%= ing.food_item.name %></h2>
+  <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
+  </div>
     <% end %>
-    </div>
+
+  </div>
 
   <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
+<%= link_to 'Back to Recipe List', recipes_path, class:"tertiary-btn"%>
 </div>
-
+<br>
 
 <% if @recipe.reviews.empty? %>
 <% else %>
-  <h3 class = 'page-tertiary-header'>See what others think </h3>
-  <div class = 'review-card'>
+  <h1>See what others think </h1>
+<div class="review-section">
       <% @recipe.reviews.each do |review| %>
-        <div class = 'review-giver'><i class="fa-solid fa-user" style="color: #1b9aaa;"></i> <%= current_user.first_name%></div>
+  <div class = 'review-card'>
+        <p><i class="fa-solid fa-user" style="color: $primary-color;"> </i>
+        <%= current_user.first_name%>
+        </p>
         <% review.rating.to_i.times do |star| %>
             <i class="fa-solid fa-star" style="color: #fed401;"></i>
         <% end %>
-        <%= review.comment %><br><br>
+       <p><%= review.comment %></p>
+  </div>
       <% end %>
   <% end %>
+</div>
+</div>
 </div>

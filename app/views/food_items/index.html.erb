@@ -1,6 +1,6 @@
 <div class = 'food-item-page'>
   <h1>Find Today's Recipe</h1>
-  <h3>Choose available ingredients</h3>
+  <h2>Choose available ingredients</h2>
 
   <%= simple_form_for :food_item, url:  root_path, method: :get do |f| %>
   <% food_array = @food_items.map do |food| food.name end %>
