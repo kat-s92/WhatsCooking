@@ -52,10 +52,9 @@ label {
 
 
 .category-selector:checked{
-  opacity: 0.4;
+  opacity: 0.3;
   width: 100%;
- 
-
+  border: #0000009b;
 }
 
 .category-selector:checked + label{
