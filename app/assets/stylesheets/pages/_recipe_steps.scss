@@ -1,8 +1,15 @@
 .recipe-steps{
-  padding: 4px 16px 32px 16px;
+  position: relative;
+
+  padding: 4px 0px 32px 0px;
   p{
     font-size: 14px;
-    padding-left:20px;
+  }
+  h3{
+    font-weight: 400;
+  }
+  h6{
+    color: $text-color;
   }
 }
 
@@ -11,16 +18,42 @@
   width:100%;
   object-fit: cover;
   margin-top: 4px;
-  margin-bottom: 16px;
   border-radius: 2px;
 }
+
+
+
 .recipe-step-info{
  margin-bottom: 32px;
-
+ display: flex;
+ flex-direction: column;
+ padding: 0px 32px 0px 32px;
 }
 
+.step-no {
+  position: absolute;
+  color: $primary-color;
+  font-weight: 400;
+  display: flex;
+  font-size: $sub-header;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  padding:16px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  z-index: 1;
+  top:165px;
+  right: 180px;
+  background-color: white;
+  border: 3px solid $primary-color;
+}
 
-
-// .slot.recipe-step-info{
-//   padding: 16px;
-// }
+.recipe-step-desc{
+  margin-top:32px;
+  padding: 0px 18px;
+  h6{
+    margin-bottom: 8px;
+  }
+}
