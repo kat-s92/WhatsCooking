@@ -19,7 +19,6 @@
       <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
       <% end %>
   </div>
-
     <div class="card-contents">
       <h3><%= recipe.name %></h3>
       <p class="chef-name">
@@ -27,13 +26,9 @@
            <%= recipe.chef.first_name %>
             <%=recipe.chef.last_name  %>
         </p>
-
       <% if recipe.reviews %>
       <p>
-
       <i class="fa-solid fa-star" style="color: #fed401;"></i>
-
-
        <% average_rating = recipe.reviews.average(:rating).to_i %>
         <%= average_rating ? average_rating.round(1) : 'No ratings yet' %>
         <span> (<%= recipe.reviews.length %> reviews) </span>
