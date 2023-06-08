@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="food_items">
+        <% if @food_items.any? %>
+          <% @food_items.each do |f| %>
+            <h4><%= f.title %></h4>
+            <p><%= f.synopsis %></p>
+          <% end %>
+        <% else %>
+          <em>Sorry, no item found!</em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
