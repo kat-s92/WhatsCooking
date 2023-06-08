@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="https://ga.jspm.io/npm:star-rating.js@4.3.0/dist/star-rating.css">
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-  <div class="main-container" style="height:100vh">
+  <body>
+  <%= render "shared/flashes" %>
+  <%= render "shared/navbar" %>
+  <div class="main-container">
     <%= yield %>
   </div>
   <%= render "shared/bottom_nav" %>
