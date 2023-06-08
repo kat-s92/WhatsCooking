@@ -2,11 +2,14 @@
     <swiper-container class="mySwiper" pagination="true" pagination-type="progressbar" navigation="false">
         <% @recipe_steps.each_with_index do |step, i| %>
          <swiper-slide>
+          <h3 class="step-no"><%= i+=1 %></h3>
          <div class="recipe-step-img"><%= image_tag("recipe_imgs/recipe1cover.jpg")%></div>
          <div class="recipe-step-info">
-          <p class="step-no">Step <%= i+=1 %></p>
-          <p>Duration: <%= step.duration %></p>
+          <div class="recipe-step-desc">
+          <h6><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %>
+           <%= step.duration.to_i %> mins</h6>
           <p><%= step.description %></p>
+          </div>
           </div>
           <% if i == @recipe_steps.count %>
           <%= render "reviews/review", review:@review, recipe:@recipe %>
