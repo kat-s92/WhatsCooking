@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :saved_recipes, only: %i[create new destroy]
   end
 
-
+  get "fooditems", to: "food_categories#search", as: "food_category_items"
   resources :shopping_carts, only: %i[index show]
   resources :saved_chefs, only: %i[index create new destroy]
   resources :saved_recipes, only: %i[index]
