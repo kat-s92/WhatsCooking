@@ -1,38 +1,51 @@
 .primary-btn{
   // height: 47px;
-  width: 100%;
-  border-radius: 25px;
-  padding: 12px 80px 12px 80px;
-  background-color: $secondary-color;
-  color: $primary-color;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.75px;
-  margin: 16px auto;
-  text-align: center;
-  // position:sticky;
-  bottom:8px;
+  width: 100% !important;
+  border-radius: 25px !important;
+  padding: 12px 80px 12px 80px !important;
+  background-color: $secondary-color !important;
+  color: $primary-color !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.75px !important;
+  margin: 16px auto !important;
+  text-align: center !important;
+  // position:sticky !important;
+  bottom:8px !important;
 }
 
 .secondary-btn{
-  background-color: $primary-color;
-  color: $white;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.75px;
-  border-radius: 25px;
-  padding: 12px 80px 12px 80px;
-  text-align: center;
-  border: none;
+  background-color: $primary-color !important;
+  color: $white !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.75px !important;
+  border-radius: 25px !important;
+  padding: 12px 80px 12px 80px !important;
+  text-align: center !important;
+  border: none !important;
 }
 
 .tertiary-btn {
-  color: $text-color;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.75px;
-  text-align: center;
-  border:.5px solid $text-color;
-  padding: 12px;
-  border-radius: 25px;
+  color: $text-color !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.75px !important;
+  text-align: center !important;
+  border:.5px solid $text-color !important;
+  padding: 12px !important;
+  border-radius: 25px !important;
+}
+
+.secondary-btn-search{
+  margin-left: 13px;
+  background-color: $primary-color !important;
+  color: $white !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.75px !important;
+  border-radius: 25px !important;
+  padding: 12px 30px 12px 30px !important;
+  text-align: center !important;
+  border: none
 }

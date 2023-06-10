@@ -1,6 +1,7 @@
 class FoodCategoriesController < ApplicationController
   def index
     if params[:food_item].present?
+
       @food_categories = FoodCategory.all
       selected_products = params[:food_item][:your_selection].drop(1)
       session[:final_selected_products] ||= []
@@ -12,10 +13,10 @@ class FoodCategoriesController < ApplicationController
   end
 
   def search
-    @food_items = FoodItem.all
-      if params[:query].present?
-      @food_items_id = FoodItem.search_by_name_and_food_category_id(params[:query]).pluck(:food_category_id)
-      @food_categories = FoodCategory.where(id: @food_items_id)
-      end
+    if params[:query].present?
+      @food_items = FoodItem.search_by_name_and_food_category_id(params[:query])
+    else
+      @food_items = FoodItem.all
+    end
   end
 end
