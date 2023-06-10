@@ -11,4 +11,11 @@ class FoodCategoriesController < ApplicationController
     end
   end
 
+  def search
+    @food_items = FoodItem.all
+      if params[:query].present?
+      @food_items_id = FoodItem.search_by_name_and_food_category_id(params[:query]).pluck(:food_category_id)
+      @food_categories = FoodCategory.where(id: @food_items_id)
+      end
+  end
 end
