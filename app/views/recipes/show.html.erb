@@ -53,16 +53,40 @@
     <h2>Description</h2>
     <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
     <br>
-      <h2>Ingredients</h2>
-    <div class="recipe-ing">
-      <% @recipe.recipe_food_item.each do |ing| %>
-        <div class="missing-item">
-          <h2><%= ing.food_item.name %></h2>
-          <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
+
+    <% if @missing_ingredients.empty? %>
+      <h2>Yay! You have all the Ingredients 🎉</h2>
+    <% else %>
+      <h2>Missing Ingredients</h2>
+        <div class="recipe-ing">
+          <% @recipe.recipe_food_item.each do |ing| %>
+            <% if @missing_ingredients.include? ing.food_item_id %>
+              <div class="missing-item">
+              <h2><%= ing.food_item.name %></h2>
+              <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
+              </div>
+            <% else %>
+            <% end %>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-    </div>
+    <% end %>
+
+     <h2>Ingredients you have</h2>
+      <div class="recipe-ing">
+        <% @recipe.recipe_food_item.each do |ing| %>
+          <% if @selected_ingredients.include? ing.food_item_id %>
+            <div class="missing-item">
+            <h2><%= ing.food_item.name %></h2>
+            <p><i class="fa-solid fa-check fa-2xl" style="color: #24ae54;" ></i></p>
+            </div>
+          <% else %>
+          <% end %>
+        <% end %>
+      </div>
+
+  </div>
+
+
     <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
     <%= link_to 'Back to Recipe List', recipes_path, class:"tertiary-btn"%>
 <br>

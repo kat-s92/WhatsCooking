@@ -14,6 +14,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    all_ingredients = RecipeFoodItem.where(recipe_id: @recipe.id)
+    all_ingredients_array = []
+    all_ingredients.each do |ingredient|
+      all_ingredients_array << ingredient.food_item_id
+    end
+    @selected_ingredients = $all_final_selected_products.flatten.map(&:to_i)
+    @missing_ingredients = all_ingredients_array - @selected_ingredients
+   
+
     @saved_recipe = SavedRecipe.where(user: current_user, recipe: @recipe).first
     @array_ratings = []
     @recipe.reviews.each do |review|
@@ -24,12 +33,5 @@ class RecipesController < ApplicationController
     end
     # @average = @clean_array.sum / @clean_array.length
     @average = @clean_array.empty? ? 0 : (@clean_array.sum.to_f / @clean_array.length).round(1)
-  end
-
-  def missing_items
-    @recipe = Recipe.find(params[:id])
-    @ingredients = @recipe.recipe_food_items
-     # storing in a varibale the selected ingredients
-    # missing items = ingredients - selected items
   end
 end
