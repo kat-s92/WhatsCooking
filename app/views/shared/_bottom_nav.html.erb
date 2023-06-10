@@ -14,15 +14,10 @@
 <%=link_to "", saved_recipes_path, class: 'btn-link'%>
 </div>
 
-<% if @missing_item.present?
- ShoppingCart.find_by(user_id: current_user.id) %>
  <div class="bottom-nav-item">
  <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
-<%=link_to " ", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id) %>
+<%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id) %>
 </div>
-<% else %>
-  <div class="bottom-nav-item-empty">
-<%= icon("fa-solid fa-shopping-cart" , style:"color: #eec2aa") %>
-</div>
-<% end %>
+
+
 </div>
