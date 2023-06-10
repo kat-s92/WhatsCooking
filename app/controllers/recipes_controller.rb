@@ -34,13 +34,6 @@ class RecipesController < ApplicationController
     end
     # @average = @clean_array.sum / @clean_array.length
     @average = @clean_array.empty? ? 0 : (@clean_array.sum.to_f / @clean_array.length).round(1)
-
-    # create new shopping cart and add missing ingredients
-    @shopping_cart = ShoppingCart.new
-    @shopping_cart.user = @user
-    @shopping_cart.save
-    
-
   end
 
   private

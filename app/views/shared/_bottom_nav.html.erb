@@ -14,10 +14,14 @@
 <%=link_to "", saved_recipes_path, class: 'btn-link'%>
 </div>
 
- <div class="bottom-nav-item">
- <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
-<%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id) %>
-</div>
+<% if current_user.present? %>
+  <div class="bottom-nav-item">
+  <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
+  <%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id) %>
+  </div>
+<% else %>
+<% end %>
+
 
 
 </div>

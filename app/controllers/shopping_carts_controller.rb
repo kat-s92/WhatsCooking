@@ -4,18 +4,17 @@ class ShoppingCartsController < ApplicationController
 
   def show
     # @shopping_cart = current_user.Shopping_cart
-    @tomato = FoodItem.find_by(name: "tomato")
-    @missing_item = MissingItem.create(food_item: @tomato)
-    @shopping_cart = ShoppingCart.new(user: current_user, missing_item_id: @missing_item)
-    @shopping_cart.save
-    # @shops = Shop.all
+    # @tomato = FoodItem.find_by(name: "tomato")
+    # @missing_item = MissingItem.create(food_item: @tomato)
+    # @shopping_cart = ShoppingCart.new(user: current_user, missing_item: @missing_item)
+    # @shopping_cart.save
+    @shops = Shop.all
     @shop = Shop.find(params[:id])
     if params[:filter]
       @shops = Shop.where(name: params[:filter])
     else
       @shops = Shop.all
     end
-
     @markers = @shops.geocoded.map do |shop|
       {
         lat: shop.latitude,
