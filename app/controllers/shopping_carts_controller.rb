@@ -1,6 +1,6 @@
 class ShoppingCartsController < ApplicationController
-    def index
-    end
+  def index
+  end
 
   def show
     # @shopping_cart = current_user.Shopping_cart
@@ -11,7 +11,7 @@ class ShoppingCartsController < ApplicationController
     # @shops = Shop.all
     @shop = Shop.find(params[:id])
     if params[:filter]
-    @shops = Shop.where(name: params[:filter])
+      @shops = Shop.where(name: params[:filter])
     else
       @shops = Shop.all
     end
@@ -25,8 +25,6 @@ class ShoppingCartsController < ApplicationController
         marker_img: helpers.asset_url(params[:filter] ? "#{params[:filter].downcase}.png" : "cart.png")
       }
     end
-
-
 
     # if
     #   @shop == @shop.name("BioMarkt")
@@ -47,4 +45,4 @@ class ShoppingCartsController < ApplicationController
     #   end
     # end
   end
- end
+end
