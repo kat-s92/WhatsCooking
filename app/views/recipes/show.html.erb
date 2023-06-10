@@ -1,91 +1,94 @@
 <div class="recipe-container">
   <h1> <%= @recipe.name %></h1>
   <div class="recipe-img">
-      <% if @recipe.id == 1 %>
+    <% if @recipe.id == 1 %>
       <%= image_tag("recipe_imgs/recipe1cover.jpg")%>
-      <% elsif @recipe.id == 2 %>
+    <% elsif @recipe.id == 2 %>
       <%= image_tag("recipe_imgs/recipe2cover.jpg")%>
-      <% elsif @recipe.id == 3 %>
+    <% elsif @recipe.id == 3 %>
       <%= image_tag("recipe_imgs/recipe3cover.jpg")%>
-      <% elsif @recipe.id == 4 %>
+    <% elsif @recipe.id == 4 %>
       <%= image_tag("recipe_imgs/recipe4cover.jpg")%>
-        <% elsif @recipe.id == 5 %>
+    <% elsif @recipe.id == 5 %>
       <%= image_tag("recipe_imgs/recipe5cover.jpg")%>
-      <% elsif @recipe.id == 6 %>
+    <% elsif @recipe.id == 6 %>
       <%= image_tag("recipe_imgs/recipe6cover.jpg")%>
-      <% end %>
-      </div>
+    <% end %>
+  </div>
 
-<div class="recipe-info">
-  <p class="pill-box"><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= @recipe.duration%> min</p>
-        <p class="pill-box">
-          <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
+  <div class="recipe-info">
+    <p class="pill-box"><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %> <%= @recipe.duration%> min</p>
+      <p class="pill-box">
+        <%= icon("fa-solid fa-user", style: "color:#ee7d45;")%>
         <% if @recipe.portion_size > 1 %>
-        <%= @recipe.portion_size%> portions
-              <% else %>
-                      <%= @recipe.portion_size%> portion
-                      <% end %>
+          <%= @recipe.portion_size%> portions
+        <% else %>
+          <%= @recipe.portion_size%> portion
+        <% end %>
         </p>
-          <p class="pill-box">
+        <p class="pill-box">
           <%= icon("fa-solid fa-calculator", style:"color: #ee7d45;")%>
           460 calories
-  </p>
-<% if @saved_recipe.present? %>
-      <div class="icon-wrapper">
-       <%= link_to saved_recipe_path(@saved_recipe), data: {turbo_method: :delete }, class: "btn" do %>
+        </p>
 
+    <% if @saved_recipe.present? %>
+      <div class="icon-wrapper">
+        <%= link_to saved_recipe_path(@saved_recipe), data: {turbo_method: :delete }, class: "btn" do %>
           <p><i class="fa-solid fa-heart fa-2x", style="color:#E4425F"></i> Saved</p>
         <% end %>
-      </div>
+        </div>
     <% else %>
       <div class="icon-wrapper">
         <%= simple_form_for [@recipe, SavedRecipe.new] do |f| %>
           <%= f.button :button do %>
-                      <p><i class="fa-regular fa-heart fa-2x" , style="color:#E4425F"></i> Save</p>
+            <p><i class="fa-regular fa-heart fa-2x" , style="color:#E4425F"></i> Save</p>
           <% end %>
         <% end %>
       </div>
     <% end %>
-</div>
-
-<div class="recipe-description">
-<p class="reviews"><i class="fa-solid fa-star" style="color: #fed401;"></i> <%= @average %> (<%= @clean_array.length %> Reviews) </p>
-
-<h2>Description</h2>
-  <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
-<br>
-  <h2>Ingredients</h2>
-  <div class="recipe-ing">
-  <% @recipe.recipe_food_item.each do |ing| %>
-  <div class="missing-item">
-  <h2><%= ing.food_item.name %></h2>
-  <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
-  </div>
-    <% end %>
-
   </div>
 
-  <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
-<%= link_to 'Back to Recipe List', recipes_path, class:"tertiary-btn"%>
-</div>
+  <div class="recipe-description">
+    <p class="reviews"><i class="fa-solid fa-star" style="color: #fed401;"></i> <%= @average %> (<%= @clean_array.length %> Reviews) </p>
+    <h2>Description</h2>
+    <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
+    <br>
+      <h2>Ingredients</h2>
+    <div class="recipe-ing">
+      <% @recipe.recipe_food_item.each do |ing| %>
+        <div class="missing-item">
+          <h2><%= ing.food_item.name %></h2>
+          <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
+        </div>
+      <% end %>
+    </div>
+    </div>
+    <%= link_to 'Cooking Steps', recipe_recipe_steps_path(@recipe.id), class:"primary-btn"%>
+    <%= link_to 'Back to Recipe List', recipes_path, class:"tertiary-btn"%>
 <br>
 
+
+
+  <div class="review-section">
 <% if @recipe.reviews.empty? %>
 <% else %>
   <h1>See what others think </h1>
-<div class="review-section">
-      <% @recipe.reviews.each do |review| %>
-  <div class = 'review-card'>
-        <p><i class="fa-solid fa-user" style="color: $primary-color;"> </i>
-        <%= current_user.first_name%>
-        </p>
-        <% review.rating.to_i.times do |star| %>
-            <i class="fa-solid fa-star" style="color: #fed401;"></i>
+        <% @recipe.reviews.each do |review| %>
+        <div class = 'review-card'>
+              <p><i class="fa-solid fa-user" style="color: $primary-color;"> </i>
+              <%= current_user.first_name%>
+              </p>
+              <% review.rating.to_i.times do |star| %>
+                  <i class="fa-solid fa-star" style="color: #fed401;"></i>
+              <% end %>
+            <p><%= review.comment %></p>
+        </div>
         <% end %>
-       <p><%= review.comment %></p>
+    <% end %>
   </div>
-      <% end %>
-  <% end %>
-</div>
-</div>
+
+
+
+
+
 </div>
