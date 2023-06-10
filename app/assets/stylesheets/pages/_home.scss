@@ -1,1 +1,29 @@
 // Specific CSS for your home-page
+h1 {
+  text-align: center;
+  color: white;
+  font-size: $main-header;
+  margin-bottom: 16px;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-size: $sub-header;
+  margin-bottom: 16px;
+}
+
+.primary-btn-home {
+    // height: 47px;
+    width: 100% !important;
+    border-radius: 25px !important;
+    padding: 12px 80px 12px 80px !important;
+    background-color: $secondary-color !important;
+    color: $primary-color !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.75px !important;
+    margin: 16px auto !important;
+    // position:sticky !important;
+    bottom:8px !important;
+}
