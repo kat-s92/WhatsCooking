@@ -6,7 +6,7 @@ class FoodItem < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_food_category_id,
-    against: [ :name, :food_category_id ],
+    against: [ :name ],
     using: {
     tsearch: { prefix: true }
     }
