@@ -1,23 +1,32 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand navbar-light navbar-lewagon">
   <div class="container-fluid">
-      <ul class="navbar-nav ms-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag("avatar.png", class: "avatar", alt: "dropdown menu") %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Profile", "#", class: "dropdown-item" %>
-              <%= link_to "Saved Recipes", "#", class: "dropdown-item" %>
-              <%= link_to "Saved Chefs", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            <%# </div> %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+      <ul class="navbar-nav ms-0 d-flex justify-content-between" style="flex-grow: 1;">
+          <div class="logo">
+            <%= icon("fa-solid fa-lemon fa-2x", style:"color: $primary-color;") %>
+          </div>
+          <div>
+            <% if user_signed_in? %>
+              <div>
+                <li class="nav-item dropdown">
+                <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= image_tag("avatar.png", class: "avatar", alt: "dropdown menu") %>
+                </a>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <%= link_to "My Profile", "#", class: "dropdown-item" %>
+                    <%= link_to "Saved Recipes", "#", class: "dropdown-item" %>
+                    <%= link_to "Saved Chefs", "#", class: "dropdown-item" %>
+                    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                  </div>
+                </li>
+              </div>
+            <% else %>
+             <div>
+                <li class="nav-item">
+                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                </li>
+              </div>
+            <% end %>
+          </div>
       </ul>
     </div>
   </div>
