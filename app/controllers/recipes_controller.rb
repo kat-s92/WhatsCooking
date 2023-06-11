@@ -23,6 +23,9 @@ class RecipesController < ApplicationController
     @selected_ingredients = $all_final_selected_products.flatten.map(&:to_i)
     @missing_ingredients = all_ingredients_array - @selected_ingredients
 
+    # @shopping_cart = ShoppingCart.new(user: current_user)
+    # @shopping_cart.save
+    # current_user.shopping_cart_id = @shopping_cart.id
 
     @saved_recipe = SavedRecipe.where(user: current_user, recipe: @recipe).first
     @array_ratings = []

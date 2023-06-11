@@ -6,7 +6,7 @@
 
 <div class="bottom-nav-item">
 <%= icon("fa-solid fa-magnifying-glass" , style:"color: $primary-color;") %>
-<%=link_to "", root_path, class: 'btn-link'%>
+<%=link_to "", food_categories_path, class: 'btn-link'%>
 </div>
 
 <div class="bottom-nav-item">
@@ -14,14 +14,18 @@
 <%=link_to "", saved_recipes_path, class: 'btn-link'%>
 </div>
 
-<% if current_user.present? %>
+
+<% if current_user.present? && current_user.shopping_cart_id.present?%>
   <div class="bottom-nav-item">
   <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
-  <%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id) %>
+  <%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id), class: 'btn-link' %>
   </div>
 <% else %>
+  <div class="bottom-nav-item">
+  <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
+  
+  </div>
 <% end %>
-
 
 
 </div>
