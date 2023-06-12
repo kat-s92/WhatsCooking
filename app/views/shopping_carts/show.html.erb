@@ -1,6 +1,10 @@
 <div class="shopping-cart">
-  <h1>Shopping List</h1>
+    <h2>Shopping List</h2>
+    <%  @missing_items.each do |missing_item| %>
+      <%= missing_item.food_item.name %><br>
+    <% end %>
     <h2>Find a supermarket near you</h2>
+
     <div class="map-filters">
       <%# <% @shops.each do |shop|%>
           <%#= link_to shop.name, shopping_cart_path(shop), class:"pill-box" %>

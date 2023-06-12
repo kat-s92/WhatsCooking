@@ -1,12 +1,15 @@
 class ShoppingCartsController < ApplicationController
   def index
+
+
   end
 
   def show
     # @shopping_cart = current_user.Shopping_cart
     # @tomato = FoodItem.find_by(name: "tomato")
     # @missing_item = MissingItem.create(food_item: @tomato)
- 
+    @missing_items = MissingItem.all
+    
     @shops = Shop.all
     @shop = Shop.find(params[:id])
     if params[:filter]

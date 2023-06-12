@@ -15,16 +15,18 @@
 </div>
 
 
-<% if current_user.present? && current_user.shopping_cart_id.present?%>
-  <div class="bottom-nav-item">
-  <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
-  <%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id), class: 'btn-link' %>
-  </div>
+<% if current_user.nil?%>
+
+<% elsif current_user.nil? && current_user.shopping_cart_id.nil? %>
+    <div class="bottom-nav-item">
+    <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
+    </div>
 <% else %>
-  <div class="bottom-nav-item">
-  <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
-  
-  </div>
+    <div class="bottom-nav-item">
+      <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
+      <%=link_to "", shopping_cart_path(ShoppingCart.find_by(user_id: current_user.id).id), class: 'btn-link' %>
+      </div>
+
 <% end %>
 
 
