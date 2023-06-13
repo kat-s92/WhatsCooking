@@ -1,10 +1,8 @@
 
 <div class = 'food-categories-page'>
-<%= render 'shared/search' %>
-
   <h1>Find Today's Recipe</h1>
   <h2>Choose available ingredients</h2>
-
+<%= render 'shared/search' %>
   <div class = 'food-categories-wrapper'>
     <%  @food_categories.each do |food_category| %>
       <div class = 'food-category-card'>
