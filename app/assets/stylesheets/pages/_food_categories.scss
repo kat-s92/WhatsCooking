@@ -62,7 +62,10 @@
     h1 {
       color: $text-color;
       font-size: $main-header;
+      padding:0;
+      text-align: left;
       margin-left: 20px;
+      margin-bottom:8px;
     }
 
     h2 {
