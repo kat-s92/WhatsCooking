@@ -3,7 +3,19 @@
         <% @recipe_steps.each_with_index do |step, i| %>
          <swiper-slide>
           <h3 class="step-no"><%= i+=1 %></h3>
-         <div class="recipe-step-img"><%= image_tag("recipe_imgs/recipe1cover.jpg")%></div>
+         <div class="recipe-step-img">
+           <% if @recipe.id == 1 && step.id == 1 %>
+         <%= image_tag("recipe_steps/recipeone_stepone.jpeg")%>
+         <% elsif step.id == 2 %>
+         <%= image_tag("recipe_steps/recipeone_steptwo.jpeg")%>
+          <% elsif step.id == 3 %>
+         <%= image_tag("recipe_steps/recipeone_stepthree.png")%>
+         <% elsif step.id == 4 %>
+         <%= image_tag("recipe_steps/recipeone_stepfour.jpg")%>
+          <% elsif step.id == 5 %>
+         <%= image_tag("recipe_steps/recipeone_stepfive.jpg")%>
+          <% end %>
+         </div>
          <div class="recipe-step-info">
           <div class="recipe-step-desc">
           <h6><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %>

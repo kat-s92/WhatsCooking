@@ -292,11 +292,6 @@ recipetwostepthree = RecipeStep.new do |s|
 end
 recipetwostepthree.save
 
-
-
-
-
-
 # REWE
 reweone = Shop.create(
   name: "Rewe",
@@ -381,7 +376,6 @@ alditwo = Shop.create(
   address: "Mall of Berlin, Leipziger Pl. 12, 10117 Berlin",
   opening_hours: "7:00am - 900pm"
 )
-
 
 user = User.create(
   first_name: "Sam",
