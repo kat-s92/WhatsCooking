@@ -1,8 +1,14 @@
 .review-card{
-  border :0.25px solid rgb(227, 227, 227);
+  margin: 0px 24px;
+  border:0.25px solid rgb(227, 227, 227);
   padding:16px;
   border-radius: 25px;
   p{
     font-size:14px;
   }
+}
+
+.review-container {
+  padding: 0px 40px;
+
 }
