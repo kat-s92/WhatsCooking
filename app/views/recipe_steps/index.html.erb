@@ -4,25 +4,40 @@
          <swiper-slide>
           <h3 class="step-no"><%= i+=1 %></h3>
          <div class="recipe-step-img">
-           <% if @recipe.id == 1 && step.id == 1 %>
+           <% if @recipe.id == 1&& step.number == 1 %>
          <%= image_tag("recipe_steps/recipeone_stepone.jpeg")%>
-         <% elsif step.id == 2 %>
+
+         <% elsif @recipe.id == 1 && step.number == 2 %>
          <%= image_tag("recipe_steps/recipeone_steptwo.jpeg")%>
-          <% elsif step.id == 3 %>
+
+    <% elsif @recipe.id == 1  && step.number == 2 %>
+         <%= image_tag("recipe_steps/recipeone_steptwo.jpeg")%>
+
+          <% elsif @recipe.id == 1 && step.number == 3 %>
          <%= image_tag("recipe_steps/recipeone_stepthree.png")%>
-         <% elsif step.id == 4 %>
+
+         <% elsif @recipe.id == 1 && step.number == 4 %>
          <%= image_tag("recipe_steps/recipeone_stepfour.jpg")%>
-          <% elsif step.id == 5 %>
+
+          <% elsif @recipe.id == 1 && step.id == 5 %>
          <%= image_tag("recipe_steps/recipeone_stepfive.jpg")%>
           <% end %>
          </div>
          <div class="recipe-step-info">
-          <div class="recipe-step-desc">
           <h6><%= icon("fa-solid fa-clock", style:"color: #ee7d45;") %>
            <%= step.duration.to_i %> mins</h6>
+          <div class="recipe-ing">
+          <h6><%= icon("fa-solid fa-utensils", style:"color: #6d0000;") %>
+           What you will need at this step</h6>
+         <%step.ingredients.each do |ing| %>
+          <h6 class="pill-box"><%= ing %></h6>
+          <% end %>
+          </div>
+          </div>
+          <div class="recipe-step-desc">
+          <h6>Instructions</h6>
           <p><%= step.description %></p>
-          </div>
-          </div>
+        </div>
           <% if i == @recipe_steps.count %>
           <%= render "reviews/review", review:@review, recipe:@recipe %>
           <% end %>

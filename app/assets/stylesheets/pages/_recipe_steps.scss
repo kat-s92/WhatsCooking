@@ -22,12 +22,19 @@
 }
 
 .recipe-step-info{
- margin-bottom: 32px;
- display: flex;
- flex-direction: column;
- padding: 0px 32px 0px 32px;
+  margin-top:32px;
+  padding: 0px 48px;
 }
 
+.recipe-step-desc{
+  margin-top:24px;
+  padding: 0px 48px;
+  h6{
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+
+  }
+}
 .step-no {
   position: absolute;
   color: $primary-color;
@@ -48,10 +55,19 @@
   border: 3px solid $primary-color;
 }
 
-.recipe-step-desc{
-  margin-top:32px;
-  padding: 0px 18px;
+
+.recipe-ing{
+  display: block;
+  padding-bottom: 16px;
+  margin: 0px;
+  p {color: $text-color;
+    font-size: 10px;
+    }
+  .pill-box {
+    padding: 9px;
+  }
   h6{
-    margin-bottom: 8px;
+    padding: 0px;
+    margin-bottom:8px;
   }
 }
