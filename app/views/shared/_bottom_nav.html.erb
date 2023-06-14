@@ -15,6 +15,7 @@
 </div>
 
 <% unless current_user.nil? %>
+
   <% if current_user.shopping_cart_id.present? || ShoppingCart.where(user_id: current_user.id).last.id%>
     <div class="bottom-nav-item">
       <%= icon("fa-solid fa-shopping-cart" , style:"color: $primary-color;") %>
@@ -24,6 +25,7 @@
     <div class="bottom-nav-item">
     </div>
   <% end %>
+
 <% end %>
 
 

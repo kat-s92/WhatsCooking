@@ -1,8 +1,11 @@
 <div class="shopping-cart">
     <h2>Shopping List</h2>
-    <%  @missing_items.each do |missing_item| %>
-      <%= missing_item.food_item.name %><br>
-    <% end %>
+    <div class = "missing-items-shopping-cart">
+        <%  @missing_items.each do |missing_item| %>
+          <%= missing_item.food_item.name %><br>
+        <% end %>
+    </div>
+
     <h2>Find a supermarket near you</h2>
 
     <div class="map-filters">

@@ -11,6 +11,7 @@ class MissingItemsController < ApplicationController
     @shopping_cart = ShoppingCart.create(user: current_user)
 
     current_user.shopping_cart_id = @shopping_cart.id
+    @cart_id = current_user.shopping_cart_id
     params[:food_item][:your_selection]
     missing_items_array = params[:food_item][:your_selection].drop(1)
     missing_items_array.each do |missing_food_item|
