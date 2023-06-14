@@ -21,6 +21,31 @@
     font-size: $sub-header;
     margin-top:8px;
   }
+
+  label {
+    color: $primary-color;
+    margin:12px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    padding-right: 16px;
+    gap: 8px;
+    text-align: right;
+    }
+
+   .form-check-input {
+    margin:12px;
+    width: 2em;
+    height: 2em;
+
+  }
+
+  .form-check-input:checked {
+    background-color: #24ae54;
+    border-color: #24ae54;
+  }
+
 }
 
 p {
@@ -39,6 +64,7 @@ p {
   color:$text-color;
   font-size: $sub-header;
   margin-bottom:16px;
+
 }
 
 .recipe-ing {

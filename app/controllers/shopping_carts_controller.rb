@@ -8,10 +8,10 @@ class ShoppingCartsController < ApplicationController
     # @shopping_cart = current_user.Shopping_cart
     # @tomato = FoodItem.find_by(name: "tomato")
     # @missing_item = MissingItem.create(food_item: @tomato)
-    @missing_items = MissingItem.all
-    
-    @shops = Shop.all
-    @shop = Shop.find(params[:id])
+    @missing_items = MissingItem.where(shopping_cart_id: params[:id])
+  
+    # @shops = Shop.all
+    # @shop = Shop.find(params[:id])
     if params[:filter]
       @shops = Shop.where(name: params[:filter])
     else

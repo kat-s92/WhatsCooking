@@ -75,7 +75,7 @@
 
               <div class="missing-item">
 
-                <%= simple_form_for :recipe_food_item, url:  recipe_missing_items_path(@recipe.id), method: :post do |f| %>
+                <%= simple_form_for :food_item, url:  recipe_missing_items_path(@recipe.id), method: :post do |f| %>
                  <%= f.input :your_selection,
                               as: :check_boxes,
                               multiple: true,
@@ -84,7 +84,7 @@
                               item_wrapper_class: 'missing-item-item',
                               input_html: {multiple:true, class: 'missing-item-selector'},
                               collection: @recipe.recipe_food_item.map{|food| if @missing_ingredients.include?(food.food_item_id)
-                                                                              [food.food_item.name, food.id]
+                                                                              [food.food_item.name, food.food_item.id]
                                                                               end}.compact %>
                   <%= f.submit "Add to Cart", class: "primary-btn", style:"border: none"%>
 
@@ -92,7 +92,6 @@
           <% end %>
         </div>
     <% end %>
-
   </div>
 
 
@@ -119,9 +118,4 @@
         <% end %>
     <% end %>
   </div>
-
-
-
-
-
 </div>

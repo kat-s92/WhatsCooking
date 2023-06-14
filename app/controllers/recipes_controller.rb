@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @user = current_user
     @recipe = Recipe.find(params[:id])
     all_ingredients = RecipeFoodItem.where(recipe_id: @recipe.id)
     all_ingredients_array = []
@@ -22,10 +21,6 @@ class RecipesController < ApplicationController
     end
     @selected_ingredients = $all_final_selected_products.flatten.map(&:to_i)
     @missing_ingredients = all_ingredients_array - @selected_ingredients
-
-    # @shopping_cart = ShoppingCart.new(user: current_user)
-    # @shopping_cart.save
-    # current_user.shopping_cart_id = @shopping_cart.id
 
     @saved_recipe = SavedRecipe.where(user: current_user, recipe: @recipe).first
     @array_ratings = []

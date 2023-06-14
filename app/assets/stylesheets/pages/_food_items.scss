@@ -51,15 +51,7 @@
 }
 
 
-label {
-    background-color: #0000008f;
-    position: absolute;
-    width: 100%;
-    margin-top: 44px;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-}
+
 // .category-selector + label {
 //   position: absolute;
 //   width: 100%;
@@ -110,19 +102,30 @@ label {
       margin-bottom: 10px;
       font-weight: 300;
     }
+
+    label {
+      background-color: #0000008f;
+      position: absolute;
+      width: 100%;
+      margin-top: 44px;
+      text-align: center;
+      font-size: 15px;
+      color: white;
+  }
+
+
+
+  .form-check-input {
+    border: none;
+  }
+
+  .form-check-input[type="checkbox"] {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+  }
+
 }
-
-
 legend {
   display: none;
-}
-
-.form-check-input {
-  border: none;
-}
-
-.form-check-input[type="checkbox"] {
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-
 }
