@@ -46,3 +46,18 @@
   background-color: $secondary-color;
   color: $primary-color;
 }
+
+.cart-btn{
+  // width: 100% !important;
+  border-radius: 25px !important;
+  padding: 12px;
+  justify-self: flex-end;
+  background-color: $primary-color !important;
+  color: $white!important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.75px !important;
+  text-align: center !important;
+  // position:sticky !important;
+  bottom:8px !important;
+}

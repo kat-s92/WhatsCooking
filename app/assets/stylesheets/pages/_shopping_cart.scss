@@ -17,14 +17,20 @@ h2 {
   margin-bottom: 10px;
   font-weight: 300;
   }
- 
+
 
   .missing-items-shopping-cart {
     color: $primary-color;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     margin:12px;
-    margin-bottom: 25px;
+    margin-bottom: 104px;
+
+    h1{
+color: $primary-color;
+    }
+
+
   }
 }
 
