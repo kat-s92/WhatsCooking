@@ -1,13 +1,13 @@
-<div style="background-image: url(<%= asset_path 'landingpage.jpg' %>);
+<div class="home-page">
+<div style="background-image: url(<%= asset_path 'landingpage.png' %>);
   height: 100vh;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   text-align: center;"
   >
-  <h1>What's Cooking</h1>
-  <h3>Discover Delicious Recipes Based on the Ingredients you Have at Home!</h3>
+  <h1>Discover Delicious Recipes with the Ingredients you Have at Home!</h1>
   <%= link_to "Let's start!", food_categories_path, class: "primary-btn-home" %>
 
 </div>
-  <%= render "shared/bottom_nav" %>
+</div>

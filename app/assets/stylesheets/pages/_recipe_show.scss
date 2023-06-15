@@ -14,12 +14,13 @@
     color: $text-color;
     font-size: $main-header;
     margin-bottom:16px;
+    text-align: left;
   }
 
   h2 {
     color: $text-color;
     font-size: $sub-header;
-    margin-top:8px;
+    margin-top:12px;
   }
 
   label {
@@ -69,8 +70,7 @@ p {
 .reviews{
   color:$text-color;
   font-size: $sub-header;
-  margin-bottom:16px;
-
+  margin-bottom:12px;
 }
 
 .recipe-ing {
@@ -111,16 +111,18 @@ padding:6px;
 border-radius: 24px;
 }
 
-.recipe-description{
-  // background-color: red;
+.recipe-step-desc{
   display: flex;
   flex-direction: column;
   padding: 8px 16px;
   font-size: 14px;
-}
 
-.recipe-description p{
-  font-size: 14px;
+h6{
+  padding-bottom: 8px;
+}
+  p{
+    font-size: 14px;
+  }
 }
 
 .review-section {

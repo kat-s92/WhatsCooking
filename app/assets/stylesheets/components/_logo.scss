@@ -1,7 +1,10 @@
 .logo{
   position: relative;
-  color: $primary-color;
-  font-size: xx-large;
-  width:54px;
   margin-left: 25px;
+  display: flex;
+  color: $primary-color;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap:8px;
 }

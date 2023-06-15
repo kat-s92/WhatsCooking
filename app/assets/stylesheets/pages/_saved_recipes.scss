@@ -1,4 +1,6 @@
 .saved-recipes{
+  display: flex;
+  flex-direction: column;
   position: relative;
   height: 100vh;
   padding:0 20px;
@@ -7,6 +9,7 @@
     color: $text-color;
     font-family: $headers-font;
     margin-bottom:16px;
+    text-align: left;
   }
 
   h3 {
@@ -45,4 +48,7 @@
   border: 0.25px solid $secondary-text-color;
 }
 
+.btn{
+  --bs-btn-border-width: 0px;
+}
 // .recipe-card-img

@@ -67,7 +67,6 @@ tapioca = FoodItem.create(name: "Tapioca", food_category_id: carbs.id, food_imag
 semolina = FoodItem.create(name: "Semolina", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/semolina.jpg"), filename: "semolina.jpg", content_type: "image/jpg" })
 plantain = FoodItem.create(name: "Plantain", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/plantain.jpg"), filename: "plantain.jpg", content_type: "image/jpg" })
 cassava = FoodItem.create(name: "Cassava", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/cassava.jpg"), filename: "cassava.jpg", content_type: "image/jpg" })
-yam = FoodItem.create(name: "Yam", food_category_id: carbs.id, food_image: { io: File.open("app/assets/images/yam.jpg"), filename: "yam.jpg", content_type: "image/jpg" })
 
 # SPICES:
 cumin = FoodItem.create(name: "Cumin", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cumin.jpg"), filename: "cumin.jpg", content_type: "image/jpg" })
@@ -79,13 +78,13 @@ cayenne = FoodItem.create(name: "Cayenne", food_category_id: spices.id, food_ima
 ginger = FoodItem.create(name: "Ginger", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/ginger.jpg"), filename: "ginger.jpg", content_type: "image/jpg" })
 nutmeg = FoodItem.create(name: "Nutmeg", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/nutmeg.jpg"), filename: "nutmeg.jpg", content_type: "image/jpg" })
 cardamom = FoodItem.create(name: "Cardamom", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cardamom.jpg"), filename: "cardamom.jpg", content_type: "image/jpg" })
-# cloves = FoodItem.create(name: "Cloves", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cloves.jpg"), filename: "cloves.jpg", content_type: "image/jpg" })
-# oregano = FoodItem.create(name: "Oregano", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/oregano.jpg"), filename: "oregano.jpg", content_type: "image/jpg" })
-# thyme = FoodItem.create(name: "Thyme", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/thyme.jpg"), filename: "thyme.jpg", content_type: "image/jpg" })
-# rosemary = FoodItem.create(name: "Rosemary", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/rosemary.jpg"), filename: "rosemary.jpg", content_type: "image/jpg" })
+cloves = FoodItem.create(name: "Cloves", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cloves.jpg"), filename: "cloves.jpg", content_type: "image/jpg" })
+oregano = FoodItem.create(name: "Oregano", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/oregano.jpg"), filename: "oregano.jpg", content_type: "image/jpg" })
+thyme = FoodItem.create(name: "Thyme", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/thyme.jpg"), filename: "thyme.jpg", content_type: "image/jpg" })
+rosemary = FoodItem.create(name: "Rosemary", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/rosemary.jpg"), filename: "rosemary.jpg", content_type: "image/jpg" })
 basil = FoodItem.create(name: "Basil", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/basil.jpg"), filename: "basil.jpg", content_type: "image/jpg" })
-# parsley = FoodItem.create(name: "Parsley", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/parsley.jpg"), filename: "parsley.jpg", content_type: "image/jpg" })
-# chili_powder = FoodItem.create(name: "Chili Powder", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cumin.jpg"), filename: "cumin.jpg", content_type: "image/jpg" })
+parsley = FoodItem.create(name: "Parsley", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/parsley.jpg"), filename: "parsley.jpg", content_type: "image/jpg" })
+chili_powder = FoodItem.create(name: "Chili Powder", food_category_id: spices.id, food_image: { io: File.open("app/assets/images/cumin.jpg"), filename: "cumin.jpg", content_type: "image/jpg" })
 
 
 # DAIRY AND CHEESE:
@@ -160,6 +159,13 @@ recipesix = Recipe.create(
   portion_size: 1
 )
 
+recipeseven = Recipe.create(
+  name: "Fresh Tomato Curry",
+  duration: 30,
+  chef_id: rand(1..10),
+  portion_size: 1
+)
+
 
 # RECIPE 1
 RecipeFoodItem.create(food_item_id: aubergine.id, recipe_id: recipeone.id)
@@ -198,6 +204,12 @@ RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipesix.id)
 RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipesix.id)
 RecipeFoodItem.create(food_item_id: bread.id, recipe_id: recipesix.id)
 
+# RECIPE 7
+RecipeFoodItem.create(food_item_id: tomato.id, recipe_id: recipeseven.id)
+RecipeFoodItem.create(food_item_id: garlic.id, recipe_id: recipeseven.id)
+RecipeFoodItem.create(food_item_id: onion.id, recipe_id: recipeseven.id)
+
+
 
   # OR Chefs.sample
 # COOKING STEPS FOR RECIPE1 ^^
@@ -218,18 +230,21 @@ recipeonestepone = RecipeStep.create(
   description: 'Preheat the oven to 220°C fan. Chop up one of your aubergines into cubes and roast for 30 minutes,
   stirring halfway through, until deeply browned and softened.',
   duration: 30,
-  recipe_id: recipeone.id
+  recipe_id: recipeone.id,
+  ingredients: ["Aubergine"]
 )
 
 # STEP2
 recipeonesteptwo = RecipeStep.new do |s|
   s.number = 2
   s.description = 'Grill the rest of your veg on a hot, smoking griddle pan. Firstly, prick the whole aubergines
-   with a fork, put them on the pan and cook til charred all over. Set aside to cool slightly. Once cooled, peel the aubergines.
+   with a fork, put them on the pan and cook til charred all over.
+   Set aside to cool slightly. Once cooled, peel the aubergines.
    Toss the onion and tomatoes together in a bowl with a tablespoon of oil and grill in the same pan for 10 minutes.
    Combine all veg together.'
   s.duration = 30
   s.recipe_id = recipeone.id
+  s.ingredients = ["Aubergine", "Onion", "Tomato", "Oil"]
 end
 recipeonesteptwo.save
 
@@ -238,10 +253,12 @@ recipeonestepthree = RecipeStep.new do |s|
   s.number = 3
   s.description = 'Put the tomato paste, paprika, three-quarters of the garlic and 4 tablespoons of oil into a small
   saucepan on a medium heat and cook, stirring occasionally, until the garlic is fragrant and the tomato paste has
-  turned dark red, about 5 minutes. Add to the vegentable mixture along with salt and pepper to taste and blitz in food
+  turned dark red, for about 5 minutes.
+  Add to the vegetable mixture along with salt and pepper to taste and blitz in food
   processor, if you have one. This is your sauce base.'
   s.duration = 7
   s.recipe_id = recipeone.id
+  s.ingredients = ["Tomato/Tomato Paste", "Garlic"]
 end
 recipeonestepthree.save
 
@@ -252,6 +269,7 @@ recipeonestepfour = RecipeStep.new do |s|
   of the pasta water, then drain the pasta well.'
   s.duration = 8
   s.recipe_id = recipeone.id
+  s.ingredients = ["Pasta", "Pasta Water"]
 end
 recipeonestepfour.save
 
@@ -263,39 +281,36 @@ recipeonestepfive = RecipeStep.new do |s|
   Add lemon juice to taste. Enjoy your meal!'
   s.duration = 2
   s.recipe_id = recipeone.id
+  s.ingredients = ["Salt", "Lemon juice to taste"]
 end
 recipeonestepfive.save
 
-# RECIPE STEPS 2
-recipetwostepone = RecipeStep.create(
+
+# RECIPE 4 STEPS
+recipefourstepone = RecipeStep.create(
   number: 1,
-  description: 'Preheat the oven',
-  duration: 30,
-  recipe_id: recipetwo.id
+  description: 'Boild your pasta according to instructions on the packet in a pot of salted water. Reserve ⅓ cup of hot pasta water for sauce',
+  duration: 8,
+  recipe_id: recipefour.id
 )
 
 # STEP2
-recipetwosteptwo = RecipeStep.new do |s|
+recipefoursteptwo = RecipeStep.new do |s|
   s.number = 2
-  s.description = 'Grill'
-  s.duration = 30
-  s.recipe_id = recipetwo.id
+  s.description = 'Meanwhile, in a large pan set on low heat, add your olive oil. Add in garlic and slow fry until fragrant. Once fragrant, add in the tomatoes. Season with salt and pepper to taste. Fry until tomatoes are softened. Cover with a lid and let it cook for about 3-5 minutes.'
+  s.duration = 5
+  s.recipe_id = recipefour.id
 end
-recipetwosteptwo.save
+recipefoursteptwo.save
 
 # STEP3
-recipetwostepthree = RecipeStep.new do |s|
+recipefourstepthree = RecipeStep.new do |s|
   s.number = 3
-  s.description = 'Eat'
-  s.duration = 7
-  s.recipe_id = recipetwo.id
+  s.description = 'Remove the lid and add in reserved pasta water. Then throw in the cooked pasta. Top off with chopped basil leaves and combine well. Once combined, turn off your heat and plate your pasta. Optional: garnish with more fresh basil.'
+  s.duration = 2
+  s.recipe_id = recipefour.id
 end
-recipetwostepthree.save
-
-
-
-
-
+recipefourstepthree.save
 
 # REWE
 reweone = Shop.create(
@@ -381,7 +396,6 @@ alditwo = Shop.create(
   address: "Mall of Berlin, Leipziger Pl. 12, 10117 Berlin",
   opening_hours: "7:00am - 900pm"
 )
-
 
 user = User.create(
   first_name: "Sam",

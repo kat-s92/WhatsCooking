@@ -97,6 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_105827) do
     t.bigint "recipe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "ingredients", default: [], array: true
     t.index ["recipe_id"], name: "index_recipe_steps_on_recipe_id"
   end
 
