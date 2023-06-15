@@ -1,6 +1,22 @@
 .shopping-cart{
 padding:0 16px;
 height: 100vh;
+display: flex;
+flex-direction: column;
+
+h1 {
+  font-size:$main-header;
+  color: $text-color;
+  font-family: $headers-font;
+  margin-bottom:16px;
+  text-align: left;
+}
+h2 {
+  color: $text-color;
+  font-size: $sub-header;
+  margin-bottom: 10px;
+  font-weight: 300;
+  }
 }
 
 a {
@@ -37,5 +53,7 @@ a:hover {
 
 #map{
   border-radius: 4px;
+  margin-bottom: 16px;
+  margin-top: 8px;
   // box-shadow: 0px 10px 30px 4px rgba(29, 28, 28, 0.08);
 }
