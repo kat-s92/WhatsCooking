@@ -111,6 +111,7 @@
       margin-bottom: 10px;
       font-weight: 300;
     }
+
     label {
       background-color: #0000008f;
       position: absolute;
@@ -120,19 +121,20 @@
       font-size: 15px;
       color: white;
   }
+
+
+
+  .form-check-input {
+    border: none;
+  }
+
+  .form-check-input[type="checkbox"] {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+  }
+
 }
-
-
 legend {
   display: none;
-}
-
-.form-check-input {
-  border: none;
-}
-
-.form-check-input[type="checkbox"] {
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-
 }

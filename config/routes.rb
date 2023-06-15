@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resources :food_categories, only: %i[index] do
     resources :food_items, only: %i[index]
   end
+
   resources :recipes, only: %i[index show], shallow: true do
+    resources :missing_items, only: %i[create new]
     resources :reviews, only: %i[index show create new]
     resources :recipe_steps, only: %i[index show]
-      resources :saved_recipes, only: %i[create new destroy]
+    resources :saved_recipes, only: %i[create new destroy]
   end
 
   get "fooditems", to: "food_categories#search", as: "food_category_items"

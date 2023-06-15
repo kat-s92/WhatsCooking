@@ -54,24 +54,7 @@
     <p>This wholesome, vegetarian-friendly recipe promises a delightful burst of flavors and a comforting experience that will leave you craving for more.</p>
     <br>
 
-    <% if @missing_ingredients.empty? %>
-      <h2>Yay! You have all the Ingredients 🎉</h2>
-    <% else %>
-      <h2>Missing Ingredients</h2>
-        <div class="recipe-ing">
-          <% @recipe.recipe_food_item.each do |ing| %>
-            <% if @missing_ingredients.include? ing.food_item_id %>
-              <div class="missing-item">
-              <h2><%= ing.food_item.name %></h2>
-              <p><i class="fa-solid fa-cart-plus fa-2xl"></i></p>
-              </div>
-            <% else %>
-            <% end %>
-          <% end %>
-        </div>
-    <% end %>
-
-     <h2>Ingredients you have</h2>
+      <h2>Ingredients you have</h2>
       <div class="recipe-ing">
         <% @recipe.recipe_food_item.each do |ing| %>
           <% if @selected_ingredients.include? ing.food_item_id %>
@@ -84,6 +67,31 @@
         <% end %>
       </div>
 
+    <% if @missing_ingredients.empty? %>
+      <h2>Yay! You have all the Ingredients 🎉</h2>
+    <% else %>
+      <h2>Missing Ingredients</h2>
+
+
+              <div class="missing-item">
+
+                <%= simple_form_for :food_item, url:  recipe_missing_items_path(@recipe.id), method: :post do |f| %>
+                 <%= f.input :your_selection,
+                              as: :check_boxes,
+                              multiple: true,
+                              collection_wrapper_tag: 'div',
+                              collection_wrapper_class: 'missing-item-wrapper',
+                              item_wrapper_class: 'missing-item-item',
+                              input_html: {multiple:true, class: 'missing-item-selector'},
+                              collection: @recipe.recipe_food_item.map{|food| if @missing_ingredients.include?(food.food_item_id)
+                                                                              [food.food_item.name, food.food_item.id]
+                                                                              end}.compact %>
+                  <%= f.submit "Add to Cart", class: "primary-btn", style:"border: none"%>
+
+              </div>
+          <% end %>
+        
+    <% end %>
   </div>
 
 
@@ -110,9 +118,4 @@
         <% end %>
     <% end %>
   </div>
-
-
-
-
-
 </div>
