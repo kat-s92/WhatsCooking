@@ -7,21 +7,17 @@
    <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                # label: 'name',
                 input_html: { autocomplete: "name" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                # label: false,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
-                label: false,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
-                label: false,
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
