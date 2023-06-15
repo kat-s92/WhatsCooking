@@ -21,17 +21,24 @@ class RecipesController < ApplicationController
     end
     @selected_ingredients = $all_final_selected_products.flatten.map(&:to_i)
     @missing_ingredients = all_ingredients_array - @selected_ingredients
-   
 
     @saved_recipe = SavedRecipe.where(user: current_user, recipe: @recipe).first
     @array_ratings = []
-    @recipe.reviews.each do |review|
-    @array_ratings << review.rating
-    end
+
+    get_reviews
+
     @clean_array = @array_ratings.reject do |rating|
       rating == nil
     end
     # @average = @clean_array.sum / @clean_array.length
     @average = @clean_array.empty? ? 0 : (@clean_array.sum.to_f / @clean_array.length).round(1)
+  end
+
+  private
+
+  def get_reviews
+    @recipe.reviews.each do |review|
+      @array_ratings << review.rating
+    end
   end
 end

@@ -22,6 +22,37 @@
     font-size: $sub-header;
     margin-top:12px;
   }
+
+  label {
+    color: $primary-color;
+    margin:12px;
+    margin-right: 166px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    padding-right: 16px;
+    gap: 8px;
+    text-align: right;
+    float: left;
+    }
+
+    label[for='food_item_your_selection_48'] {
+      margin-right: 152px;
+    }
+
+   .form-check-input {
+    margin:12px;
+    width: 2em;
+    height: 2em;
+
+  }
+
+  .form-check-input:checked {
+    background-color: #24ae54;
+    border-color: #24ae54;
+  }
+
 }
 
 p {
@@ -47,7 +78,7 @@ p {
   display: flex;
   flex-direction: column;
   color: $primary-color;
-  padding-right:16px;
+  padding-right:25px;
   gap:8px;
 }
 
