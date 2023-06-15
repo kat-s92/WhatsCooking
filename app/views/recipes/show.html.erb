@@ -86,11 +86,11 @@
                               collection: @recipe.recipe_food_item.map{|food| if @missing_ingredients.include?(food.food_item_id)
                                                                               [food.food_item.name, food.food_item.id]
                                                                               end}.compact %>
-                  <%= f.submit "Add to Cart", class: "primary-btn", style:"border: none"%>
+                  <%= f.submit "Add to Cart", class: "cart-btn", style:"border: none"%>
 
               </div>
           <% end %>
-        
+
     <% end %>
   </div>
 
