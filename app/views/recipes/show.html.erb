@@ -100,7 +100,7 @@
         <% @recipe.reviews.each do |review| %>
         <div class = 'review-card'>
               <p><i class="fa-solid fa-user" style="color: $primary-color;"> </i>
-              <%= current_user.first_name%>
+              <%= review.review_user_name %>
               </p>
               <% review.rating.to_i.times do |star| %>
                   <i class="fa-solid fa-star" style="color: #fed401;"></i>
