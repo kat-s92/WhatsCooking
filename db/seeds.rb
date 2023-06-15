@@ -403,5 +403,10 @@ user = User.create(
   email: "user@gmail.com",
   password: "123456"
 )
+
+shopping_cart = ShoppingCart.create(
+  user_id: user.id
+)
+
 puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes, #{Shop.count} shops, #{User.count}"
 puts "We have a DB ✅ with #{FoodCategory.count} categories, #{FoodItem.count} food items, #{RecipeFoodItem.count} food recipe items, #{Chef.count}👨🏻‍🍳 chefs, #{Recipe.count} recipes"
