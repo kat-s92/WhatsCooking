@@ -28,14 +28,14 @@
            <%= step.duration.to_i %> mins</h6>
           <div class="recipe-ing">
           <h6><%= icon("fa-solid fa-utensils", style:"color: #6d0000;") %>
-           What you will need at this step</h6>
+            What you will need at this step</h6>
          <%step.ingredients.each do |ing| %>
           <h6 class="pill-box"><%= ing %></h6>
           <% end %>
           </div>
           </div>
           <div class="recipe-step-desc">
-          <h6>Instructions</h6>
+          <h6><%= icon("fa-solid fa-gear", style:"color: #6d0000;") %> Instructions</h6>
           <p><%= step.description %></p>
         </div>
           <% if i == @recipe_steps.count %>
